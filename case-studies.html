@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Case Studies &amp; Telemetry | Stackly Systems</title>
+  <meta name="description" content="Explore verified enterprise case studies in FinTech, Healthcare, and Autonomous IoT delivered by Stackly Systems.">
+  <meta name="theme-color" content="#070a13">
+
+  <link rel="preload" href="assets/real-datacenter.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" fetchpriority="high">
+      </a>
+
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Solutions <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="tech-stack.html" class="nav-link">Tech Stack <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="case-studies.html" class="nav-link active">Case Studies <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="contact.html" class="btn-consultation">Work With Us</a>
+        <button class="theme-toggle-btn" aria-label="Toggle visual theme mode" type="button">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm" style="border-radius:var(--radius-full);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;margin-right:0.25rem;">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          Log In
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Cinematic Video Spotlight Hero (Unique to Case Studies Page) -->
+    <section class="case-hero-video-spotlight" aria-label="Featured Case Study Spotlight">
+      <!-- Full-Width Background Video Backdrop -->
+      <div class="case-video-backdrop" aria-hidden="true">
+        <video autoplay loop muted playsinline>
+          <source src="assets/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="case-video-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="case-spotlight-grid">
+          <div class="case-spotlight-info">
+            <div class="badge badge-emerald">
+              <span class="pulse-dot" style="background:var(--brand-emerald);"></span> Verified Production Telemetry
+            </div>
+            <h1>Enterprise Transformations at <span class="text-gradient">Planet Scale</span></h1>
+            <p style="color:#94a3b8; font-size:1.1rem; line-height:1.65; margin-bottom:1.5rem; max-width:580px;">
+              Real telemetry from real global enterprises. Explore how Stackly modernizes core banking ledgers, clinical hospital agentic systems, and autonomous vehicle streams.
+            </p>
+
+            <!-- Interactive Case Spotlight Tabs -->
+            <div class="case-tab-pills" role="tablist" aria-label="Featured Spotlight Cases">
+              <button class="case-tab-btn active" data-case="fintech" role="tab" aria-selected="true">01. Tier-1 FinTech</button>
+              <button class="case-tab-btn" data-case="health" role="tab" aria-selected="false">02. MedTech HIPAA AI</button>
+              <button class="case-tab-btn" data-case="fleet" role="tab" aria-selected="false">03. Autonomous Fleet</button>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap;">
+              <a href="contact.html" class="btn btn-primary">Request Client Case Deck &rarr;</a>
+              <button type="button" class="btn btn-outline open-video-modal-btn" data-video-title="Stackly Enterprise Case Studies Architecture Film">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;margin-right:0.4rem;color:var(--brand-emerald);"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Watch 2-Min Architecture Film
+              </button>
+            </div>
+          </div>
+
+          <!-- Featured Spotlight Card (Updates live on tab click) -->
+          <article class="case-spotlight-card" id="spotlight-card">
+            <div class="case-spotlight-thumb">
+              <img 
+                id="spotlight-img"
+                src="assets/portfolio-executive-presentation.webp" 
+                alt="FinTech Core Banking Cloud Migration Architecture" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="case-spotlight-body">
+              <div class="badge badge-cyan" id="spotlight-badge" style="margin-bottom:0.6rem;">Tier-1 Investment Banking</div>
+              <h3 id="spotlight-title">Global Core Ledger Modernization &amp; Latency Reduction</h3>
+              <p id="spotlight-desc">
+                Migrated transactional core processing $60B daily to active-active Kafka &amp; CockroachDB mesh across AWS regions with zero cutover downtime.
+              </p>
+
+              <div class="case-spotlight-metrics">
+                <div class="metric-box">
+                  <div class="m-val" id="spotlight-m1">&lt; 8ms</div>
+                  <div class="m-lbl">P99 Settlement</div>
+                </div>
+                <div class="metric-box">
+                  <div class="m-val" id="spotlight-m2">$14.2M</div>
+                  <div class="m-lbl">Cloud Saved / Yr</div>
+                </div>
+                <div class="metric-box">
+                  <div class="m-val" id="spotlight-m3">0 Sec</div>
+                  <div class="m-lbl">Cutover Downtime</div>
+                </div>
+              </div>
+
+              <a href="contact.html" class="btn btn-primary btn-sm btn-block">Download Reference Architecture Spec &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted Enterprise Partners Marquee Strip (Reference Layout 2) -->
+    <section class="partner-logo-strip" aria-label="Trusted Enterprise Partners">
+      <div class="container">
+        <div class="partner-strip-title">Trusted by Modern CTOs &amp; Engineering Teams Worldwide</div>
+        <div class="partner-logos-wrap">
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            GlobexBank
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            CloudWatch
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            Epicurove
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            BioSynthesis
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Interlock Global
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Showcase Section (Reference Image 1) -->
+    <section class="portfolio-showcase-section" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <div class="section-header" style="margin-bottom:1.5rem;">
+          <div class="badge badge-emerald">Selected Works</div>
+          <h2 id="portfolio-heading" style="font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em;">
+            Portfolio
+          </h2>
+          <p>Groundbreaking enterprise transformations delivered across high-scale banking, telecom, and healthcare networks.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Left Featured Hero Card -->
+          <article class="portfolio-hero-card">
+            <img 
+              src="assets/portfolio-executive-presentation.webp" 
+              alt="Executive Strategy Presentation - Innovative Solutions for a Stellar Future" 
+              class="portfolio-bg-img"
+              width="800" 
+              height="447" 
+              loading="lazy"
+            >
+            <div class="portfolio-overlay"></div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Enterprise Transformation</span>
+              <h3>Innovative Solutions For A Stellar Future</h3>
+              <p>
+                Modernizing core banking ledgers and distributed transaction pipelines with zero cutover downtime and active-active multi-region reliability.
+              </p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Request Architecture Blueprint &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Right Side Card with Motivation & Metrics -->
+          <article class="portfolio-side-card">
+            <div>
+              <span class="side-card-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                Motivation &amp; Execution
+              </span>
+              <h4>Enterprise Cloud Modernization &amp; DevSecOps Acceleration</h4>
+              <p>
+                Partnering with engineering leadership to build high-velocity release engines, automated policy-as-code, and resilient distributed systems.
+              </p>
+              <div class="side-card-photo">
+                <img 
+                  src="assets/team-collaborating-modern.webp" 
+                  alt="Stackly Architects Collaborating on Digital Transformation" 
+                  width="800" 
+                  height="447" 
+                  loading="lazy"
+                >
+              </div>
+            </div>
+
+            <div class="side-card-metrics">
+              <div>
+                <span class="val">&gt; 99.999%</span>
+                <span class="lbl">Federated SLA</span>
+              </div>
+              <div>
+                <span class="val">&lt; 15 min</span>
+                <span class="lbl">MTTR Recovery</span>
+              </div>
+              <div>
+                <span class="val">38%</span>
+                <span class="lbl">Avg FinOps Savings</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credibility Section: We Are More Than Just A Company (Reference Image 2) -->
+    <section class="credibility-section" aria-labelledby="credibility-heading">
+      <div class="container">
+        <div class="credibility-grid">
+          <div class="credibility-content">
+            <span class="credibility-badge">Who We Are</span>
+            <h2 id="credibility-heading">We are more than just a company</h2>
+            <p>
+              We are architects of innovation, trail-blazers of technological advancement, and partners in your enterprise journey. At Stackly, we thrive on transforming complex distributed systems into decisive competitive advantages.
+            </p>
+
+            <div class="credibility-stats">
+              <div class="stat-box">
+                <div class="stat-num">12<span>+</span></div>
+                <div class="stat-label">Years of enterprise experience in cloud architecture and software engineering.</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-num">50<span>+</span></div>
+                <div class="stat-label">Global enterprises and high-growth scaleups successfully modernized.</div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1.25rem;">
+              <a href="contact.html" class="btn btn-primary">Book Consultation &rarr;</a>
+              <a href="services.html" class="btn btn-outline">Our Services &rarr;</a>
+            </div>
+          </div>
+
+          <div class="credibility-photo-wrap">
+            <img 
+              src="assets/team-collaborating-modern.webp" 
+              alt="Stackly Enterprise Technology Consulting Team in Modern Office" 
+              width="800" 
+              height="447" 
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- 4-Metric Stats Ribbon Bar (Reference Image 3) -->
+        <div class="stats-ribbon-bar">
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">440<span>+</span></div>
+            <div class="ribbon-stat-label">Satisfied Enterprise Clients</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">62<span>+</span></div>
+            <div class="ribbon-stat-label">Cloud Modernizations Completed</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">44<span>+</span></div>
+            <div class="ribbon-stat-label">Security &amp; ISO Accreditations</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">53<span>+</span></div>
+            <div class="ribbon-stat-label">Principal &amp; Staff Engineers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study 1: FinTech Core Banking -->
+    <section class="section" style="border-top:1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="card-glass" style="display:grid;grid-template-columns:1.1fr 0.9fr;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);">
+          <div style="padding:3.5rem;">
+            <div class="badge badge-cyan" style="margin-bottom:1rem;">FinTech &bull; Tier-1 Investment Banking</div>
+            <h2 style="font-size:2rem;margin-bottom:1rem;">Global Core Ledger Modernization &amp; Latency Reduction</h2>
+            <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:2rem;">
+              The client operated a legacy mainframe core processing $60B daily. Stackly migrated the transactional backbone to an active-active Kafka and CockroachDB mesh deployed across AWS us-east-1, eu-west-1, and ap-southeast-1.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;padding-block:1.5rem;border-block:1px solid var(--border-subtle);margin-bottom:2rem;">
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:var(--brand-cyan)">&lt; 8ms</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Settlement P99 (was 140ms)</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:var(--brand-emerald)">$14.2M</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Annual Cloud Run-Rate Saved</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:#ffffff">0 Sec</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Cutover Outage Downtime</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Request FinTech Architecture Spec</a>
+          </div>
+          <div style="height:100%;overflow:hidden;position:relative;">
+            <img src="assets/real-datacenter.webp" alt="FinTech Core Banking Cloud Migration" width="800" height="500" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study 2: MedTech Agentic Clinical AI -->
+    <section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="card-glass" style="display:grid;grid-template-columns:0.9fr 1.1fr;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);">
+          <div style="height:100%;overflow:hidden;position:relative;">
+            <img src="assets/real-ai-lab.webp" alt="MedTech HIPAA Agentic Diagnostic Platform" width="800" height="500" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="padding:3.5rem;">
+            <div class="badge badge-emerald" style="margin-bottom:1rem;">Healthcare &bull; HIPAA &amp; FHIR Compliant</div>
+            <h2 style="font-size:2rem;margin-bottom:1rem;">Agentic Clinical Diagnosis Engine Across 18 Hospitals</h2>
+            <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:2rem;">
+              Engineered private on-premise DeepSeek-R1 inference clusters orchestrated with LangGraph and Model Context Protocol (MCP). Delivered real-time clinical trial matching across 18 regional hospital centers without patient data ever egressing hospital VPCs.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;padding-block:1.5rem;border-block:1px solid var(--border-subtle);margin-bottom:2rem;">
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:var(--brand-emerald)">100%</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">HIPAA Enclave Isolation</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:var(--brand-cyan)">7.4x</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Trial Ingestion Acceleration</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:#ffffff">Zero</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Patient Data Egress</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-cyan">Request HealthTech Blueprint</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study 3: Autonomous Fleet Edge Telemetry -->
+    <section class="section" style="border-top:1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="card-glass" style="display:grid;grid-template-columns:1.1fr 0.9fr;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);">
+          <div style="padding:3.5rem;">
+            <div class="badge badge-cyan" style="margin-bottom:1rem;">Automotive &bull; Edge Stream Analytics</div>
+            <h2 style="font-size:2rem;margin-bottom:1rem;">Autonomous Fleet: 4.8M Events/Sec Real-Time Lakehouse</h2>
+            <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:2rem;">
+              Deployed edge Kubernetes micro-nodes with ClickHouse lakehouse stream pipelines processing global autonomous vehicle sensor telemetry and emergency braking telemetry in sub-12 milliseconds.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1.5rem;padding-block:1.5rem;border-block:1px solid var(--border-subtle);margin-bottom:2rem;">
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:var(--brand-cyan)">4.8M</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Ingestion Events / Sec</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:var(--brand-emerald)">99.999%</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Edge Ingress SLA</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-heading);font-size:1.85rem;font-weight:700;color:#ffffff">11.4 ms</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Edge to Cloud P99</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Request IoT Edge Whitepaper</a>
+          </div>
+          <div style="height:100%;overflow:hidden;position:relative;">
+            <img src="assets/real-devops-team.webp" alt="Autonomous Fleet Edge Telemetry Platform" width="800" height="500" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+            <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" loading="lazy">
+          </a>
+          <p>Architecting the resilient, autonomous enterprise stack.</p>
+          <div class="social-links" aria-label="Social Channels">
+            <a href="404.html" class="social-icon-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="X Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tech-stack.html">Tech Stack</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Advisory RFP</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Global Hubs</h4>
+          <ul>
+            <li><a href="contact.html">San Francisco &bull; Core</a></li>
+            <li><a href="contact.html">New York &bull; Financial Core</a></li>
+            <li><a href="contact.html">London &bull; EMEA Hub</a></li>
+            <li><a href="contact.html">Singapore &bull; APAC Base</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stackly Journal</h4>
+          <p>Receive quarterly peer-reviewed engineering papers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed', 'Added to Stackly Journal.', 'success');">
+            <input type="email" placeholder="cto@firm.com" required>
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Systems, LLC. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="404.html">Security Disclosures</a>
+          <a href="404.html">Master Services Agreement</a>
+          <a href="404.html">SOC2 Type II Report</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

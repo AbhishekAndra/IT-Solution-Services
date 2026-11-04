@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly | Transformation ROI &amp; Velocity Calculator</title>
+  <meta name="description" content="Model your projected cloud efficiency savings, time-to-market reduction, and testing velocity with Stackly architectural models.">
+  <meta name="theme-color" content="#0B0F14">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#22D3EE',
+              dark: '#0B0F14',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- React 18 & Babel Standalone for Live Browser Execution -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      background-color: #0B0F14;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #22D3EE;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+      transition: transform 0.1s ease;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body class="bg-[#0B0F14] min-h-screen">
+
+  <!-- Header Bar -->
+  <header class="border-b border-slate-800 bg-[#0B0F14]/90 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/stackly-logo.webp" alt="Stackly" class="h-9 w-auto" style="filter:drop-shadow(0 0 10px rgba(34,211,238,0.4));">
+      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-xs font-mono text-slate-400 hover:text-white transition">← Back to Homepage</a>
+        <a href="contact.html" class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono font-semibold hover:bg-cyan-500/20 transition">
+          Book Review
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- React Mount Point -->
+  <main id="root"></main>
+
+  <!-- Live React Component Script -->
+  <script type="text/babel">
+    const { useState, useMemo, useCallback } = React;
+
+    // --- Embedded ASSUMPTIONS matching calculateROI.ts ---
+    const ASSUMPTIONS = {
+      finOps: {
+        tiers: [
+          { maxSpend: 50000, rate: 0.28, label: 'Standard FinOps Tier (28%)' },
+          { maxSpend: 250000, rate: 0.32, label: 'Mid-Market Scale Tier (32%)' },
+          { maxSpend: 1000000, rate: 0.36, label: 'Multi-Region Enterprise Tier (36%)' },
+          { maxSpend: 2500000, rate: 0.39, label: 'Global Infrastructure Tier (39%)' },
+          { maxSpend: Infinity, rate: 0.42, label: 'Hyperscale Kubernetes Tier (42%)' },
+        ],
+      },
+      deployFriction: {
+        currentHoursPerDeploy: 1.8,
+        postHoursPerDeploy: 0.15,
+        weeksPerMonth: 4.333,
+      },
+      doraBenchmarks: {
+        targetMttrHours: 0.5,
+        cfrReductionMultiplier: 0.25,
+        minPostCfrPercent: 3.0,
+        engineersPerIncident: 2.5,
+      },
+      environmentOverhead: {
+        legacyHoursPerEnvMonthly: 6.0,
+        ephemeralSavingsPercent: 0.85,
+      },
+      timeToMarket: {
+        baseReductionPercent: 22.0,
+        envFactorMaxPercent: 26.0,
+        maxEnvDenominator: 40.0,
+        cfrFactorMaxPercent: 28.0,
+        maxCfrDenominator: 60.0,
+        maxTotalTtmReduction: 74.0,
+      },
+      compliance: {
+        None: { baseHoursAnnual: 0, automationSavingsRate: 0, label: 'No Regulatory Regime' },
+        SOC2: { baseHoursAnnual: 420, automationSavingsRate: 0.78, label: 'SOC 2 Type II' },
+        HIPAA: { baseHoursAnnual: 580, automationSavingsRate: 0.82, label: 'HIPAA Security Rule' },
+        'PCI-DSS': { baseHoursAnnual: 680, automationSavingsRate: 0.80, label: 'PCI-DSS 4.0' },
+        FedRAMP: { baseHoursAnnual: 1250, automationSavingsRate: 0.85, label: 'FedRAMP High / Moderate' },
+        envScaleMultiplier: 0.025,
+      },
+      economics: {
+        blendedHourlyRate: 118,
+        maxRecoveredHoursPerMonth: 65,
+      },
+      engagementModel: {
+        baseEngagementCost: 95000,
+        cloudSpendCoeff: 0.055,
+        teamSizeCoeff: 450,
+        environmentCoeff: 1250,
+        minEngagementCost: 85000,
+        maxEngagementCost: 650000,
+      },
+      boundaries: {
+        monthlyCloudSpend: { min: 10000, max: 5000000, default: 125000, step: 5000 },
+        teamSize: { min: 5, max: 500, default: 40, step: 1 },
+        deploysPerWeek: { min: 1, max: 200, default: 24, step: 1 },
+        mttrHours: { min: 1, max: 72, default: 8, step: 0.5 },
+        changeFailureRate: { min: 1, max: 60, default: 18, step: 1 },
+        environmentCount: { min: 2, max: 40, default: 8, step: 1 },
+        complianceRegimes: ['None', 'SOC2', 'HIPAA', 'PCI-DSS', 'FedRAMP'],
+      },
+    };
+
+    function clamp(val, min, max) {
+      if (isNaN(val) || !isFinite(val)) return min;
+      return Math.min(max, Math.max(min, val));
+    }
+
+    function formatCurrency(amount) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0,
+      }).format(amount);
+    }
+
+    function formatCompactCurrency(amount) {
+      if (amount >= 1000000) return `$${(amount / 1000000).toFixed(2)}M`;
+      if (amount >= 1000) return `$${(amount / 1000).toFixed(0)}k`;
+      return formatCurrency(amount);
+    }
+
+    function calculateROI(inputs) {
+      const spend = clamp(inputs.monthlyCloudSpend, 10000, 5000000);
+      const team = clamp(inputs.teamSize, 5, 500);
+      const deploys = clamp(inputs.deploysPerWeek, 1, 200);
+      const mttr = clamp(inputs.mttrHours, 1, 72);
+      const cfr = clamp(inputs.changeFailureRate, 1, 60);
+      const envs = clamp(inputs.environmentCount, 2, 40);
+      const regime = inputs.complianceRegime || 'SOC2';
+
+      const tier = ASSUMPTIONS.finOps.tiers.find(t => spend <= t.maxSpend) || ASSUMPTIONS.finOps.tiers[ASSUMPTIONS.finOps.tiers.length - 1];
+      const finOpsSavingsRate = tier.rate;
+      const annualCloudCostSavings = Math.round(spend * 12 * finOpsSavingsRate);
+
+      const monthlyDeploys = deploys * ASSUMPTIONS.deployFriction.weeksPerMonth;
+      const deployHoursSavedMonth = monthlyDeploys * (ASSUMPTIONS.deployFriction.currentHoursPerDeploy - ASSUMPTIONS.deployFriction.postHoursPerDeploy);
+
+      const currentFailedDeploys = monthlyDeploys * (cfr / 100);
+      const currentIncidentHoursMonth = currentFailedDeploys * mttr * ASSUMPTIONS.doraBenchmarks.engineersPerIncident;
+
+      const postCfr = Math.max(ASSUMPTIONS.doraBenchmarks.minPostCfrPercent, cfr * ASSUMPTIONS.doraBenchmarks.cfrReductionMultiplier);
+      const postFailedDeploys = monthlyDeploys * (postCfr / 100);
+      const postIncidentHoursMonth = postFailedDeploys * ASSUMPTIONS.doraBenchmarks.targetMttrHours * ASSUMPTIONS.doraBenchmarks.engineersPerIncident;
+      const incidentHoursSavedMonth = Math.max(0, currentIncidentHoursMonth - postIncidentHoursMonth);
+
+      const envHoursSavedMonth = envs * ASSUMPTIONS.environmentOverhead.legacyHoursPerEnvMonthly * ASSUMPTIONS.environmentOverhead.ephemeralSavingsPercent;
+      const totalHoursSavedOrgMonth = deployHoursSavedMonth + incidentHoursSavedMonth + envHoursSavedMonth;
+      const rawHoursPerEngineer = totalHoursSavedOrgMonth / team;
+      const hoursRecoveredPerEngineerMonth = Math.min(ASSUMPTIONS.economics.maxRecoveredHoursPerMonth, Math.max(1.5, Math.round(rawHoursPerEngineer * 10) / 10));
+
+      const totalEngineeringHoursRecoveredYear = Math.round(hoursRecoveredPerEngineerMonth * 12 * team);
+      const annualEngineeringCapacityValue = Math.round(totalEngineeringHoursRecoveredYear * ASSUMPTIONS.economics.blendedHourlyRate);
+
+      const envBonus = (envs / ASSUMPTIONS.timeToMarket.maxEnvDenominator) * ASSUMPTIONS.timeToMarket.envFactorMaxPercent;
+      const cfrBonus = (cfr / ASSUMPTIONS.timeToMarket.maxCfrDenominator) * ASSUMPTIONS.timeToMarket.cfrFactorMaxPercent;
+      const rawTtm = ASSUMPTIONS.timeToMarket.baseReductionPercent + envBonus + cfrBonus;
+      const timeToMarketReductionPercent = Math.min(ASSUMPTIONS.timeToMarket.maxTotalTtmReduction, Math.round(rawTtm * 10) / 10);
+
+      const complianceConfig = ASSUMPTIONS.compliance[regime];
+      const envScale = 1 + Math.max(0, envs - 2) * ASSUMPTIONS.compliance.envScaleMultiplier;
+      const complianceAuditHoursSavedAnnual = Math.round(complianceConfig.baseHoursAnnual * complianceConfig.automationSavingsRate * envScale);
+      const annualComplianceSavingsValue = Math.round(complianceAuditHoursSavedAnnual * ASSUMPTIONS.economics.blendedHourlyRate);
+
+      const rawCost = ASSUMPTIONS.engagementModel.baseEngagementCost + (spend * ASSUMPTIONS.engagementModel.cloudSpendCoeff) + (team * ASSUMPTIONS.engagementModel.teamSizeCoeff) + (envs * ASSUMPTIONS.engagementModel.environmentCoeff);
+      const estimatedInvestment = Math.round(clamp(rawCost, ASSUMPTIONS.engagementModel.minEngagementCost, ASSUMPTIONS.engagementModel.maxEngagementCost));
+
+      const totalAnnualFinancialBenefit = annualCloudCostSavings + annualEngineeringCapacityValue + annualComplianceSavingsValue;
+      const projectedRoiMultiple = Math.round((totalAnnualFinancialBenefit / estimatedInvestment) * 10) / 10;
+      const monthlyBenefit = totalAnnualFinancialBenefit / 12;
+      const paybackPeriodMonths = monthlyBenefit > 0 ? Math.min(24, Math.max(0.6, Math.round((estimatedInvestment / monthlyBenefit) * 10) / 10)) : 12;
+
+      return {
+        annualCloudCostSavings,
+        finOpsSavingsRate,
+        hoursRecoveredPerEngineerMonth,
+        totalEngineeringHoursRecoveredYear,
+        annualEngineeringCapacityValue,
+        timeToMarketReductionPercent,
+        estimatedInvestment,
+        projectedRoiMultiple,
+        paybackPeriodMonths,
+        complianceAuditHoursSavedAnnual,
+        annualComplianceSavingsValue,
+        totalAnnualFinancialBenefit,
+        comparisonMetrics: {
+          monthlyCloudSpend: {
+            title: 'Monthly Cloud Infrastructure Spend',
+            current: Math.round(spend),
+            post: Math.round(spend * (1 - finOpsSavingsRate)),
+            deltaPercent: -Math.round(finOpsSavingsRate * 100),
+            formattedCurrent: formatCurrency(Math.round(spend)),
+            formattedPost: formatCurrency(Math.round(spend * (1 - finOpsSavingsRate))),
+          },
+          incidentDowntimeHoursMonthly: {
+            title: 'Monthly Incident Outage Hours',
+            current: Math.round(currentFailedDeploys * mttr * 10) / 10,
+            post: Math.round(postFailedDeploys * ASSUMPTIONS.doraBenchmarks.targetMttrHours * 10) / 10,
+            deltaPercent: -85,
+            formattedCurrent: `${Math.round(currentFailedDeploys * mttr * 10) / 10}h`,
+            formattedPost: `${Math.round(postFailedDeploys * ASSUMPTIONS.doraBenchmarks.targetMttrHours * 10) / 10}h`,
+          },
+          deployCycleHoursPerDeploy: {
+            title: 'Deployment Pipeline Lead Time',
+            current: ASSUMPTIONS.deployFriction.currentHoursPerDeploy,
+            post: ASSUMPTIONS.deployFriction.postHoursPerDeploy,
+            deltaPercent: -92,
+            formattedCurrent: `${ASSUMPTIONS.deployFriction.currentHoursPerDeploy}h`,
+            formattedPost: `${Math.round(ASSUMPTIONS.deployFriction.postHoursPerDeploy * 60)}m`,
+          }
+        }
+      };
+    }
+
+    function generateSummaryText(inputs, outputs) {
+      return `============================================================
+STACKLY TRANSFORMATION ROI & VELOCITY MODEL
+============================================================
+Monthly Spend: ${formatCurrency(inputs.monthlyCloudSpend)} | Team: ${inputs.teamSize} eng | Deploys: ${inputs.deploysPerWeek}/wk
+MTTR: ${inputs.mttrHours}h | CFR: ${inputs.changeFailureRate}% | Envs: ${inputs.environmentCount} | Regime: ${inputs.complianceRegime}
+
+DELIVERABLES & ANNUAL BENEFIT:
+• Annual Cloud Cost Savings:    ${formatCurrency(outputs.annualCloudCostSavings)} (${(outputs.finOpsSavingsRate * 100).toFixed(0)}% FinOps reduction)
+• Engineering Capacity Recovered: ${outputs.hoursRecoveredPerEngineerMonth} hrs/eng/month (${formatCurrency(outputs.annualEngineeringCapacityValue)})
+• Time-to-Market Acceleration:  ${outputs.timeToMarketReductionPercent}% lead time reduction
+• Compliance Prep Saved:        ${outputs.complianceAuditHoursSavedAnnual} hrs/year (${formatCurrency(outputs.annualComplianceSavingsValue)})
+------------------------------------------------------------
+TOTAL ANNUAL FINANCIAL BENEFIT: ${formatCurrency(outputs.totalAnnualFinancialBenefit)} / year
+ESTIMATED STACKLY INVESTMENT:   ${formatCurrency(outputs.estimatedInvestment)}
+PROJECTED ANNUAL ROI MULTIPLE:  ${outputs.projectedRoiMultiple}x
+ESTIMATED PAYBACK PERIOD:       ${outputs.paybackPeriodMonths} months
+============================================================
+Schedule Architecture Review: https://stackly.systems/contact`;
+    }
+
+    function TransformationCalculatorApp() {
+      const [inputs, setInputs] = useState({
+        monthlyCloudSpend: 125000,
+        teamSize: 40,
+        deploysPerWeek: 24,
+        mttrHours: 8,
+        changeFailureRate: 18,
+        environmentCount: 8,
+        complianceRegime: 'SOC2',
+      });
+
+      const [copied, setCopied] = useState(false);
+      const outputs = useMemo(() => calculateROI(inputs), [inputs]);
+
+      const updateField = (field, val) => {
+        setInputs(prev => ({ ...prev, [field]: val }));
+      };
+
+      const handleCopySummary = async () => {
+        const text = generateSummaryText(inputs, outputs);
+        await navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      };
+
+      const { monthlyCloudSpend, incidentDowntimeHoursMonthly, deployCycleHoursPerDeploy } = outputs.comparisonMetrics;
+
+      return (
+        <section className="w-full bg-[#0B0F14] text-slate-100 py-16 px-4 sm:px-6 lg:px-8 font-sans antialiased">
+          <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="text-center max-w-4xl mx-auto mb-14">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-medium tracking-wide uppercase mb-4 shadow-[0_0_15px_rgba(34,211,238,0.15)]">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Stackly Architectural Modeling Engine
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                Transformation ROI &amp; Velocity Calculator
+              </h1>
+              <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto">
+                Model your projected cloud efficiency savings, time-to-market reduction, and testing velocity with Stackly architectural models.
+              </p>
+            </div>
+
+            {/* 2-Column Responsive Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              {/* Left Column: Sliders & Number Fields */}
+              <div className="lg:col-span-5 bg-[#0F141C] border border-slate-800/80 rounded-2xl p-6 sm:p-7 shadow-2xl relative overflow-hidden">
+                <div className="flex items-center justify-between pb-5 mb-6 border-b border-slate-800">
+                  <div>
+                    <h2 className="text-base font-semibold text-white tracking-wide">Infrastructure Parameters</h2>
+                    <p className="text-xs text-slate-400">Calibrate to your current engineering topology</p>
+                  </div>
+                  <button
+                    onClick={() => setInputs({
+                      monthlyCloudSpend: 125000,
+                      teamSize: 40,
+                      deploysPerWeek: 24,
+                      mttrHours: 8,
+                      changeFailureRate: 18,
+                      environmentCount: 8,
+                      complianceRegime: 'SOC2',
+                    })}
+                    className="text-xs font-mono text-slate-400 hover:text-cyan-300 transition py-1 px-2.5 rounded bg-slate-900 border border-slate-800"
+                  >
+                    Reset Defaults
+                  </button>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Spend */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <label className="font-medium text-slate-300">Monthly Cloud Spend ($ USD)</label>
+                      <input
+                        type="number"
+                        min="10000"
+                        max="5000000"
+                        step="5000"
+                        value={inputs.monthlyCloudSpend}
+                        onChange={e => updateField('monthlyCloudSpend', Number(e.target.value))}
+                        className="w-28 px-2 py-1 bg-[#0B0F14] border border-slate-700 rounded-lg text-right font-mono font-semibold text-cyan-300 text-sm focus:outline-none focus:border-cyan-400"
+                      />
+                    </div>
+                    <input
+                      type="range"
+                      min="10000"
+                      max="5000000"
+                      step="5000"
+                      value={inputs.monthlyCloudSpend}
+                      onChange={e => updateField('monthlyCloudSpend', Number(e.target.value))}
+                      className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                    />
+                    <div className="flex justify-between text-[11px] font-mono text-slate-500">
+                      <span>$10k/mo</span>
+                      <span>$1M/mo</span>
+                      <span>$5M/mo</span>
+                    </div>
+                  </div>
+
+                  {/* Team Size */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <label className="font-medium text-slate-300">Engineering Team Size</label>
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="number"
+                          min="5"
+                          max="500"
+                          value={inputs.teamSize}
+                          onChange={e => updateField('teamSize', Number(e.target.value))}
+                          className="w-20 px-2 py-1 bg-[#0B0F14] border border-slate-700 rounded-lg text-right font-mono font-semibold text-cyan-300 text-sm focus:outline-none focus:border-cyan-400"
+                        />
+                        <span className="text-xs text-slate-500">eng</span>
+                      </div>
+                    </div>
+                    <input
+                      type="range"
+                      min="5"
+                      max="500"
+                      value={inputs.teamSize}
+                      onChange={e => updateField('teamSize', Number(e.target.value))}
+                      className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                    />
+                    <div className="flex justify-between text-[11px] font-mono text-slate-500">
+                      <span>5 eng</span>
+                      <span>250 eng</span>
+                      <span>500 eng</span>
+                    </div>
+                  </div>
+
+                  {/* Deploys */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <label className="font-medium text-slate-300">Deploys per Week</label>
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="number"
+                          min="1"
+                          max="200"
+                          value={inputs.deploysPerWeek}
+                          onChange={e => updateField('deploysPerWeek', Number(e.target.value))}
+                          className="w-20 px-2 py-1 bg-[#0B0F14] border border-slate-700 rounded-lg text-right font-mono font-semibold text-cyan-300 text-sm focus:outline-none focus:border-cyan-400"
+                        />
+                        <span className="text-xs text-slate-500">/wk</span>
+                      </div>
+                    </div>
+                    <input
+                      type="range"
+                      min="1"
+                      max="200"
+                      value={inputs.deploysPerWeek}
+                      onChange={e => updateField('deploysPerWeek', Number(e.target.value))}
+                      className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                    />
+                    <div className="flex justify-between text-[11px] font-mono text-slate-500">
+                      <span>1/wk</span>
+                      <span>100/wk</span>
+                      <span>200/wk</span>
+                    </div>
+                  </div>
+
+                  {/* MTTR */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <label className="font-medium text-slate-300">Incident Recovery (MTTR)</label>
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="number"
+                          min="1"
+                          max="72"
+                          step="0.5"
+                          value={inputs.mttrHours}
+                          onChange={e => updateField('mttrHours', Number(e.target.value))}
+                          className="w-20 px-2 py-1 bg-[#0B0F14] border border-slate-700 rounded-lg text-right font-mono font-semibold text-cyan-300 text-sm focus:outline-none focus:border-cyan-400"
+                        />
+                        <span className="text-xs text-slate-500">hrs</span>
+                      </div>
+                    </div>
+                    <input
+                      type="range"
+                      min="1"
+                      max="72"
+                      step="0.5"
+                      value={inputs.mttrHours}
+                      onChange={e => updateField('mttrHours', Number(e.target.value))}
+                      className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                    />
+                    <div className="flex justify-between text-[11px] font-mono text-slate-500">
+                      <span>1 hr (Elite)</span>
+                      <span>24 hrs</span>
+                      <span>72 hrs</span>
+                    </div>
+                  </div>
+
+                  {/* Change Failure Rate */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <label className="font-medium text-slate-300">Change Failure Rate (%)</label>
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="number"
+                          min="1"
+                          max="60"
+                          value={inputs.changeFailureRate}
+                          onChange={e => updateField('changeFailureRate', Number(e.target.value))}
+                          className="w-20 px-2 py-1 bg-[#0B0F14] border border-slate-700 rounded-lg text-right font-mono font-semibold text-cyan-300 text-sm focus:outline-none focus:border-cyan-400"
+                        />
+                        <span className="text-xs text-slate-500">%</span>
+                      </div>
+                    </div>
+                    <input
+                      type="range"
+                      min="1"
+                      max="60"
+                      value={inputs.changeFailureRate}
+                      onChange={e => updateField('changeFailureRate', Number(e.target.value))}
+                      className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                    />
+                    <div className="flex justify-between text-[11px] font-mono text-slate-500">
+                      <span>1%</span>
+                      <span>30%</span>
+                      <span>60%</span>
+                    </div>
+                  </div>
+
+                  {/* Environments */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <label className="font-medium text-slate-300">Number of Environments</label>
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="number"
+                          min="2"
+                          max="40"
+                          value={inputs.environmentCount}
+                          onChange={e => updateField('environmentCount', Number(e.target.value))}
+                          className="w-20 px-2 py-1 bg-[#0B0F14] border border-slate-700 rounded-lg text-right font-mono font-semibold text-cyan-300 text-sm focus:outline-none focus:border-cyan-400"
+                        />
+                        <span className="text-xs text-slate-500">envs</span>
+                      </div>
+                    </div>
+                    <input
+                      type="range"
+                      min="2"
+                      max="40"
+                      value={inputs.environmentCount}
+                      onChange={e => updateField('environmentCount', Number(e.target.value))}
+                      className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                    />
+                    <div className="flex justify-between text-[11px] font-mono text-slate-500">
+                      <span>2 envs</span>
+                      <span>20 envs</span>
+                      <span>40 envs</span>
+                    </div>
+                  </div>
+
+                  {/* Compliance Selector */}
+                  <div className="space-y-2 pt-2">
+                    <label className="text-sm font-medium text-slate-300">Compliance Framework</label>
+                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+                      {['None', 'SOC2', 'HIPAA', 'PCI-DSS', 'FedRAMP'].map(regime => {
+                        const isSelected = inputs.complianceRegime === regime;
+                        return (
+                          <button
+                            key={regime}
+                            type="button"
+                            onClick={() => updateField('complianceRegime', regime)}
+                            className={`py-2 px-1 text-center rounded-lg text-xs font-mono font-semibold transition border ${
+                              isSelected
+                                ? 'bg-cyan-500/20 text-cyan-200 border-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.3)]'
+                                : 'bg-slate-900/80 text-slate-400 border-slate-800 hover:border-slate-700 hover:text-slate-200'
+                            }`}
+                          >
+                            {regime}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Right Column: Live Output Cards, SVG Bar Chart, CTAs */}
+              <div className="lg:col-span-7 space-y-6">
+                
+                {/* Hero Summary Card */}
+                <div className="bg-gradient-to-br from-[#0F172A] via-[#0F141C] to-[#0A1017] border border-cyan-500/30 rounded-2xl p-6 sm:p-7 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold bg-cyan-950/70 border border-cyan-500/30 px-3 py-1 rounded-full">
+                      Total Annual Enterprise Value
+                    </span>
+                    <span className="text-xs font-mono text-slate-400">
+                      Est. Stackly Engagement: <strong className="text-slate-200">{formatCurrency(outputs.estimatedInvestment)}</strong>
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4 mb-6">
+                    <div>
+                      <div className="text-4xl sm:text-5xl font-black font-mono text-white tracking-tight flex items-baseline gap-1">
+                        {formatCurrency(outputs.totalAnnualFinancialBenefit)}
+                        <span className="text-sm font-sans font-normal text-slate-400">/ yr</span>
+                      </div>
+                      <p className="text-xs text-slate-400 mt-1">
+                        FinOps Cloud Savings + DORA Engineering Capacity + Automated Compliance Prep
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <div className="bg-cyan-500/10 border border-cyan-400/40 rounded-xl px-4 py-2.5 text-center min-w-[95px]">
+                        <div className="text-2xl font-black font-mono text-cyan-300">
+                          {outputs.projectedRoiMultiple}x
+                        </div>
+                        <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                          Projected ROI
+                        </div>
+                      </div>
+
+                      <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl px-4 py-2.5 text-center min-w-[95px]">
+                        <div className="text-2xl font-black font-mono text-emerald-400">
+                          {outputs.paybackPeriodMonths}mo
+                        </div>
+                        <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                          Payback
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-full bg-slate-800/80 h-1.5 rounded-full overflow-hidden">
+                    <div
+                      className="bg-gradient-to-r from-cyan-400 to-emerald-400 h-full rounded-full transition-all duration-500"
+                      style={{ width: `${Math.min(100, Math.max(15, outputs.projectedRoiMultiple * 5))}%` }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* 4 Metrics Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Metric 1: FinOps Savings */}
+                  <div className="bg-[#0F141C] border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+                    <div className="flex justify-between text-xs font-mono text-slate-400 mb-2">
+                      <span>FinOps Cloud Savings</span>
+                      <span className="text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded">
+                        -{(outputs.finOpsSavingsRate * 100).toFixed(0)}% Bill
+                      </span>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
+                      {formatCurrency(outputs.annualCloudCostSavings)}
+                    </div>
+                    <p className="text-xs text-slate-400 mt-2">
+                      Kubernetes node bin-packing, Karpenter autoscaling, and spot tier optimization.
+                    </p>
+                  </div>
+
+                  {/* Metric 2: Hours Recovered */}
+                  <div className="bg-[#0F141C] border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+                    <div className="flex justify-between text-xs font-mono text-slate-400 mb-2">
+                      <span>Engineering Hours Saved</span>
+                      <span className="text-cyan-400 font-semibold bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+                        DORA Elite
+                      </span>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white flex items-baseline gap-1">
+                      {outputs.hoursRecoveredPerEngineerMonth}
+                      <span className="text-xs font-sans text-slate-400 font-normal">hrs / eng / mo</span>
+                    </div>
+                    <p className="text-xs text-slate-400 mt-2">
+                      {formatCompactCurrency(outputs.annualEngineeringCapacityValue)} total capacity recovered annually across {inputs.teamSize} engineers.
+                    </p>
+                  </div>
+
+                  {/* Metric 3: Time-to-Market */}
+                  <div className="bg-[#0F141C] border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+                    <div className="flex justify-between text-xs font-mono text-slate-400 mb-2">
+                      <span>Time-to-Market Reduction</span>
+                      <span className="text-cyan-400 font-semibold bg-cyan-950/60 border border-cyan-500/30 px-2 py-0.5 rounded">
+                        GitOps Velocity
+                      </span>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
+                      {outputs.timeToMarketReductionPercent}%
+                    </div>
+                    <p className="text-xs text-slate-400 mt-2">
+                      Derived from {inputs.environmentCount} environments and automated rollback on change failures.
+                    </p>
+                  </div>
+
+                  {/* Metric 4: Compliance Saved */}
+                  <div className="bg-[#0F141C] border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+                    <div className="flex justify-between text-xs font-mono text-slate-400 mb-2">
+                      <span>Compliance Prep Saved</span>
+                      <span className="text-indigo-400 font-semibold bg-indigo-950/60 border border-indigo-500/30 px-2 py-0.5 rounded">
+                        {inputs.complianceRegime}
+                      </span>
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white flex items-baseline gap-1">
+                      {outputs.complianceAuditHoursSavedAnnual}
+                      <span className="text-xs font-sans text-slate-400 font-normal">hrs / year</span>
+                    </div>
+                    <p className="text-xs text-slate-400 mt-2">
+                      {inputs.complianceRegime === 'None'
+                        ? 'No regulatory regime selected.'
+                        : `Continuous automated policy-as-code & evidence gathering for ${inputs.complianceRegime}.`}
+                    </p>
+                  </div>
+                </div>
+
+                {/* SVG Bar Chart: Current vs Post-Transformation */}
+                <div className="bg-[#0F141C] border border-slate-800 rounded-xl p-5 sm:p-6 shadow-lg">
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <div>
+                      <h3 className="text-sm font-semibold text-white tracking-wide">
+                        Operational Transformation: Current vs. Stackly Model
+                      </h3>
+                      <p className="text-xs text-slate-400">
+                        Direct benchmark comparison across cloud spend, outage downtime, and deploy lead time
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-4 text-xs font-mono">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-3 h-3 rounded bg-slate-600 inline-block"></span>
+                        <span className="text-slate-400">Current State</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-3 h-3 rounded bg-cyan-400 inline-block shadow-[0_0_8px_rgba(34,211,238,0.5)]"></span>
+                        <span className="text-cyan-300 font-medium">Post-Stackly</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    {/* Cloud Spend Bar */}
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-xs font-mono">
+                        <span className="text-slate-300">{monthlyCloudSpend.title}</span>
+                        <span className="text-emerald-400 font-semibold">{monthlyCloudSpend.deltaPercent}%</span>
+                      </div>
+                      <svg className="w-full h-8 bg-slate-900/60 rounded-lg p-1 border border-slate-800/80" viewBox="0 0 100 16" preserveAspectRatio="none">
+                        <rect x="0" y="2" width="100" height="5" rx="1.5" fill="#475569" />
+                        <rect x="0" y="9" width={Math.max(10, Math.round(100 * (1 - outputs.finOpsSavingsRate)))} height="5" rx="1.5" fill="#22D3EE" />
+                      </svg>
+                      <div className="flex justify-between text-[11px] font-mono text-slate-400">
+                        <span>Current: <strong className="text-slate-200">{monthlyCloudSpend.formattedCurrent}</strong></span>
+                        <span>Post-Stackly: <strong className="text-cyan-300">{monthlyCloudSpend.formattedPost}</strong></span>
+                      </div>
+                    </div>
+
+                    {/* Incident Downtime Bar */}
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-xs font-mono">
+                        <span className="text-slate-300">{incidentDowntimeHoursMonthly.title}</span>
+                        <span className="text-emerald-400 font-semibold">{incidentDowntimeHoursMonthly.deltaPercent}%</span>
+                      </div>
+                      <svg className="w-full h-8 bg-slate-900/60 rounded-lg p-1 border border-slate-800/80" viewBox="0 0 100 16" preserveAspectRatio="none">
+                        <rect x="0" y="2" width="100" height="5" rx="1.5" fill="#475569" />
+                        <rect x="0" y="9" width={Math.max(8, Math.round((incidentDowntimeHoursMonthly.post / Math.max(0.1, incidentDowntimeHoursMonthly.current)) * 100))} height="5" rx="1.5" fill="#22D3EE" />
+                      </svg>
+                      <div className="flex justify-between text-[11px] font-mono text-slate-400">
+                        <span>Current: <strong className="text-slate-200">{incidentDowntimeHoursMonthly.formattedCurrent}</strong></span>
+                        <span>Post-Stackly: <strong className="text-cyan-300">{incidentDowntimeHoursMonthly.formattedPost}</strong></span>
+                      </div>
+                    </div>
+
+                    {/* Deploy Cycle Bar */}
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-xs font-mono">
+                        <span className="text-slate-300">{deployCycleHoursPerDeploy.title}</span>
+                        <span className="text-emerald-400 font-semibold">{deployCycleHoursPerDeploy.deltaPercent}%</span>
+                      </div>
+                      <svg className="w-full h-8 bg-slate-900/60 rounded-lg p-1 border border-slate-800/80" viewBox="0 0 100 16" preserveAspectRatio="none">
+                        <rect x="0" y="2" width="100" height="5" rx="1.5" fill="#475569" />
+                        <rect x="0" y="9" width="8.3" height="5" rx="1.5" fill="#22D3EE" />
+                      </svg>
+                      <div className="flex justify-between text-[11px] font-mono text-slate-400">
+                        <span>Current: <strong className="text-slate-200">{deployCycleHoursPerDeploy.formattedCurrent}</strong></span>
+                        <span>Post-Stackly: <strong className="text-cyan-300">{deployCycleHoursPerDeploy.formattedPost}</strong></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Actions & Buttons */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2">
+                  <button
+                    type="button"
+                    onClick={handleCopySummary}
+                    className={`flex items-center justify-center gap-2 px-5 py-3 rounded-xl border text-sm font-semibold transition ${
+                      copied
+                        ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
+                        : 'bg-slate-900 text-slate-200 border-slate-700 hover:border-slate-500 hover:bg-slate-800'
+                    }`}
+                  >
+                    {copied ? (
+                      <>
+                        <svg className="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Summary Copied to Clipboard!</span>
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>Copy Summary as Text</span>
+                      </>
+                    )}
+                  </button>
+
+                  <a
+                    href="contact.html"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm tracking-wide transition shadow-[0_0_20px_rgba(34,211,238,0.35)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transform hover:-translate-y-0.5"
+                  >
+                    <span>Book Architecture Review</span>
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+
+                {/* Disclaimer */}
+                <p className="text-center sm:text-left text-xs font-mono text-slate-400 pt-2 border-t border-slate-800/80">
+                  Estimates based on Stackly engagement averages; not a binding quote.
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<TransformationCalculatorApp />);
+  </script>
+</body>
+</html>
+

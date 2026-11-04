@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly | Enterprise Cloud Architecture, Agentic AI &amp; Zero-Trust Transformation</title>
+  <meta name="description" content="Stackly is a premier enterprise IT consulting & digital transformation firm specializing in multi-region Kubernetes, agentic AI workflows, and zero-trust cyber resilience.">
+  <meta name="theme-color" content="#070a13">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Stackly | Enterprise IT Consulting &amp; Cloud Transformation">
+  <meta property="og:description" content="Architecting resilient distributed systems, autonomous AI agents, and zero-trust cloud infrastructure.">
+  <meta property="og:image" content="assets/real-datacenter.webp">
+
+  <!-- Performance & Preloading -->
+  <link rel="preload" href="assets/real-datacenter.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD Structured Data for Stackly -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Stackly Systems, LLC",
+    "url": "https://stackly.systems",
+    "logo": "https://stackly.systems/assets/real-datacenter.webp",
+    "description": "Enterprise-grade IT consulting, multi-region cloud architecture, agentic AI systems, and zero-trust cybersecurity.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-555-0199",
+      "contactType": "customer service",
+      "availableLanguage": ["English"]
+    },
+    "sameAs": [
+      "404.html",
+      "404.html",
+      "404.html",
+      "404.html"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       Global Sticky Header (Stackly Logo & Separate Page Links)
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" fetchpriority="high">
+      </a>
+
+      <!-- Desktop Navigation Menu to Dedicated Separate Pages -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="services.html" class="nav-link">Solutions <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="tech-stack.html" class="nav-link">Tech Stack <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="case-studies.html" class="nav-link">Case Studies <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions: Work With Us CTA, Theme Switcher & Portal -->
+      <div class="header-actions">
+        <a href="contact.html" class="btn-consultation">Work With Us</a>
+
+        <button class="theme-toggle-btn" aria-label="Toggle visual theme mode" type="button">
+          <!-- Sun Icon (Dark Mode) -->
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (Light Mode) -->
+          <svg class="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="login.html" class="btn btn-secondary btn-sm" style="border-radius:var(--radius-full);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          Log In
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button class="mobile-toggle" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobile-nav" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav" class="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <span class="brand-logo" style="font-size:1.25rem;">Stack<span>ly</span></span>
+        <button class="close-drawer" aria-label="Close mobile menu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-links">
+        <a href="index.html">Home Overview</a>
+        <a href="services.html">Services &amp; Architecture</a>
+        <a href="tech-stack.html">Latest Tools &amp; Matrix</a>
+        <a href="case-studies.html">Case Studies &amp; Impact</a>
+        <a href="contact.html">Advisory RFP &amp; Booking</a>
+      </div>
+      <div style="margin-top:auto;display:flex;flex-direction:column;gap:0.75rem;">
+        <a href="login.html" class="btn btn-primary btn-block">Client Portal Login</a>
+        <a href="signup.html" class="btn btn-outline btn-block">Request Access</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- ========================================================================
+         Hero Section with Ambient Video & Real Datacenter Imagery
+         ======================================================================== -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <!-- Full-Width Background Video Container with Dark Semi-Transparent Blur Overlay -->
+      <div class="hero-video-wrapper" aria-hidden="true">
+        <video class="hero-video-bg" autoplay loop muted playsinline>
+          <source src="assets/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="badge badge-cyan">
+              <span class="pulse-dot"></span>
+              Stackly Systems Advisory &bull; 2026 Enterprise Architecture
+            </div>
+            <h1 id="hero-heading">
+              Architecting the <span class="text-gradient">Modern Enterprise Stack</span> with Cloud &amp; Agentic AI
+            </h1>
+            <p class="hero-lead">
+              Stackly partners with CTOs and VP Engineers to modernize distributed infrastructure, engineer private agentic AI pipelines with DeepSeek-R1 &amp; LangGraph, and deploy zero-trust Kubernetes topologies.
+            </p>
+            <div class="hero-ctas">
+              <a href="contact.html" class="btn btn-primary btn-lg">
+                Get a Consultation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <!-- Video Modal Trigger -->
+              <button type="button" class="btn btn-secondary btn-lg open-video-modal-btn" data-video-title="Stackly 2-Min Architecture Overview">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" style="width:18px;height:18px;color:var(--brand-cyan)">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Watch 2-Min Architecture Overview
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Graphic with Real Datacenter Image & Video Play Trigger -->
+          <div class="hero-visual">
+            <div class="graphic-frame">
+              <img 
+                src="assets/real-datacenter.webp" 
+                alt="Stackly Enterprise Datacenter Infrastructure &amp; Cloud Network" 
+                width="800" 
+                height="500" 
+                fetchpriority="high"
+              >
+              <!-- Video Play Overlay Button -->
+              <button type="button" class="video-play-overlay-btn open-video-modal-btn" aria-label="Play video walkthrough">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+
+              <div class="floating-status-badge">
+                <div class="badge-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <div class="badge-text">
+                  <span class="label">Stackly Production Mesh</span>
+                  <span class="val">99.999% SLA &bull; Active-Active Multi-Cloud</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Telemetry Metrics Bar -->
+        <div class="hero-metrics-bar" role="region" aria-label="Stackly Performance Metrics">
+          <div class="metric-item">
+            <div class="metric-value">$420<span class="accent">M+</span></div>
+            <div class="metric-label">Cloud Cost Run-Rate Saved</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">4.8<span class="accent">M</span></div>
+            <div class="metric-label">Events/Sec Stream Ingestion</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">99.999<span class="accent">%</span></div>
+            <div class="metric-label">Cross-Region Ingress SLA</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">0<span class="accent">D</span></div>
+            <div class="metric-label">Zero-Trust Policy Violations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Enterprise Partners Marquee Strip (Reference Layout 2)
+         ======================================================================== -->
+    <section class="partner-logo-strip" aria-label="Trusted Enterprise Partners">
+      <div class="container">
+        <div class="partner-strip-title">Trusted by Modern CTOs &amp; Engineering Teams Worldwide</div>
+        <div class="partner-logos-wrap">
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            GlobexBank
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            CloudWatch
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            Epicurove
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            BioSynthesis
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Interlock Global
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Featured Showcase: Solutions & Tech Insights (Matching Mockup Reference)
+         ======================================================================== -->
+    <section class="section showcase-section" id="solutions-showcase" aria-labelledby="showcase-heading">
+      <div class="container">
+        
+        <!-- Header Row with Categories label and horizontal divider line -->
+        <div class="categories-header-row">
+          <div class="categories-label-wrap">
+            <span class="categories-tag-title">Categories</span>
+            <div class="categories-divider" aria-hidden="true"></div>
+          </div>
+          <h2 id="showcase-heading" class="sr-only">Our Key Solutions &amp; Tech Insights</h2>
+        </div>
+
+        <!-- Horizontal Filter Pill Bar (Matching UI Reference Mockup) -->
+        <div class="categories-filter-bar" role="tablist" aria-label="Solutions Categories">
+          <button class="cat-pill active" data-filter="all" role="tab" aria-selected="true">ALL</button>
+          <button class="cat-pill" data-filter="marketing-trends" role="tab" aria-selected="false">MARKETING TRENDS</button>
+          <button class="cat-pill" data-filter="content-strategy" role="tab" aria-selected="false">CONTENT STRATEGY</button>
+          <button class="cat-pill" data-filter="social-media" role="tab" aria-selected="false">SOCIAL MEDIA</button>
+          <button class="cat-pill" data-filter="seo" role="tab" aria-selected="false">SEO</button>
+          <button class="cat-pill" data-filter="email-marketing" role="tab" aria-selected="false">EMAIL MARKETING</button>
+          <button class="cat-pill" data-filter="branding" role="tab" aria-selected="false">BRANDING</button>
+          <button class="cat-pill" data-filter="case-studies" role="tab" aria-selected="false">CASE STUDIES</button>
+        </div>
+
+        <!-- Interactive Multi-Card Swiper Container -->
+        <div class="swiper-container-custom cards-carousel showcase-swiper" role="region" aria-label="Solutions &amp; Case Studies Swiper">
+          <div class="swiper-wrapper">
+            
+            <!-- Slide 1: Augmented Reality Customer Experience (Exact UI Reference Mockup) -->
+            <div class="swiper-slide">
+              <article class="showcase-card" data-category="case-studies branding social-media">
+                <div class="showcase-card-media">
+                  <img 
+                    src="assets/card-ar-vr-headset.webp" 
+                    alt="Person wearing futuristic augmented reality VR headset with glowing holographic elements" 
+                    width="800" 
+                    height="447" 
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                  <div class="showcase-badge">CASE STUDIES</div>
+                </div>
+                <div class="showcase-card-body">
+                  <h3 class="showcase-card-title">
+                    <a href="services.html">How We Revolutionize the Customer Experience Using Augmented Reality</a>
+                  </h3>
+                  <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Augmented Reality &amp; CX Architecture Highlight">
+                    <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Watch 2-Min Architecture Overview
+                  </button>
+                  <div class="showcase-card-meta">
+                    <span class="meta-author">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      BY CHIAKI SATO
+                    </span>
+                    <span class="meta-tag">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                      CASE STUDIES
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 2: The Future of Marketing with 3D Holographic Megaphone (Exact UI Reference Mockup) -->
+            <div class="swiper-slide">
+              <article class="showcase-card" data-category="marketing-trends seo email-marketing">
+                <div class="showcase-card-media">
+                  <img 
+                    src="assets/card-future-marketing.webp" 
+                    alt="3D Holographic futuristic megaphone with glowing spheres in cyberspace" 
+                    width="800" 
+                    height="447" 
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                  <div class="showcase-badge">MARKETING TRENDS</div>
+                </div>
+                <div class="showcase-card-body">
+                  <h3 class="showcase-card-title">
+                    <a href="services.html">The Future of Marketing: Predictions for the Next 5 Years</a>
+                  </h3>
+                  <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Future of Marketing &amp; Automation Overview">
+                    <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Watch 2-Min Architecture Overview
+                  </button>
+                  <div class="showcase-card-meta">
+                    <span class="meta-author">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      BY OLIVIA WILSON
+                    </span>
+                    <span class="meta-tag">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                      MARKETING TRENDS
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 3: Crafting a Killer Content Strategy with Cyber Hands (Exact UI Reference Mockup) -->
+            <div class="swiper-slide">
+              <article class="showcase-card" data-category="content-strategy social-media branding">
+                <div class="showcase-card-media">
+                  <img 
+                    src="assets/card-cyber-hands.webp" 
+                    alt="Cybernetic robotic hands interacting with glowing mobile screen and gold tokens" 
+                    width="800" 
+                    height="447" 
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                  <div class="showcase-badge">CONTENT STRATEGY</div>
+                </div>
+                <div class="showcase-card-body">
+                  <h3 class="showcase-card-title">
+                    <a href="services.html">Crafting a Killer Content Strategy: Tips and Tricks for Success</a>
+                  </h3>
+                  <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Enterprise Content Strategy Highlight">
+                    <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Watch 2-Min Architecture Overview
+                  </button>
+                  <div class="showcase-card-meta">
+                    <span class="meta-author">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      BY OLIVIA WILSON
+                    </span>
+                    <span class="meta-tag">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                      CONTENT STRATEGY
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 4: Cloud & Security with Holographic Globe -->
+            <div class="swiper-slide">
+              <article class="showcase-card" data-category="case-studies branding">
+                <div class="showcase-card-media">
+                  <img 
+                    src="assets/card-globe-network.webp" 
+                    alt="3D Holographic Network Globe with cyber nodes and security pathways" 
+                    width="800" 
+                    height="447" 
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                  <div class="showcase-badge">CLOUD &amp; SECURITY</div>
+                </div>
+                <div class="showcase-card-body">
+                  <h3 class="showcase-card-title">
+                    <a href="services.html">Leveraging Cloud &amp; Security for Enterprise Growth</a>
+                  </h3>
+                  <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Cloud &amp; Security Architecture Highlight">
+                    <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Watch 2-Min Architecture Overview
+                  </button>
+                  <div class="showcase-card-meta">
+                    <span class="meta-author">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      BY SARAH JENKINS
+                    </span>
+                    <span class="meta-tag">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                      CASE STUDIES
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 5: AI Revolution with Digital Architecture Cubes -->
+            <div class="swiper-slide">
+              <article class="showcase-card" data-category="marketing-trends seo">
+                <div class="showcase-card-media">
+                  <img 
+                    src="assets/card-architecture-cubes.webp" 
+                    alt="3D Abstract glowing digital blocks and data architecture matrix" 
+                    width="800" 
+                    height="447" 
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                  <div class="showcase-badge">AI &amp; AUTOMATION</div>
+                </div>
+                <div class="showcase-card-body">
+                  <h3 class="showcase-card-title">
+                    <a href="services.html">The AI Revolution: Automating Modern Business Workflows</a>
+                  </h3>
+                  <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="AI Agentic Workflows Architecture Highlight">
+                    <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Watch 2-Min Architecture Overview
+                  </button>
+                  <div class="showcase-card-meta">
+                    <span class="meta-author">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      BY DAVID CHEN
+                    </span>
+                    <span class="meta-tag">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                      TECH TRENDS
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 6: IT Strategy with Cybernetic Robotic Hand -->
+            <div class="swiper-slide">
+              <article class="showcase-card" data-category="content-strategy branding">
+                <div class="showcase-card-media">
+                  <img 
+                    src="assets/card-cyber-hand.webp" 
+                    alt="3D Cybernetic robotic hand interacting with floating glowing server nodes" 
+                    width="800" 
+                    height="447" 
+                    loading="lazy" 
+                    decoding="async"
+                  />
+                  <div class="showcase-badge">IT STRATEGY</div>
+                </div>
+                <div class="showcase-card-body">
+                  <h3 class="showcase-card-title">
+                    <a href="services.html">Mastering IT Strategy &amp; Digital Transformation</a>
+                  </h3>
+                  <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="IT Transformation Strategy Overview">
+                    <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    Watch 2-Min Architecture Overview
+                  </button>
+                  <div class="showcase-card-meta">
+                    <span class="meta-author">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      BY ELENA ROSTOVA
+                    </span>
+                    <span class="meta-tag">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                      IT STRATEGY
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          </div>
+
+          <!-- Swiper Navigation Controls & Glowing Dots -->
+          <div class="swiper-controls-bar">
+            <button class="swiper-nav-btn swiper-btn-prev" aria-label="Previous Slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="swiper-pagination-dots"></div>
+            <button class="swiper-nav-btn swiper-btn-next" aria-label="Next Slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4-Tile Photo Mosaic & Experienced Engineers (Reference Layout 3)
+         ======================================================================== -->
+    <section class="mosaic-experience-section" aria-labelledby="mosaic-heading">
+      <div class="container">
+        <div class="mosaic-layout">
+          <!-- 4-Photo Collage Grid -->
+          <div class="photo-mosaic-grid">
+            <div class="mosaic-tile">
+              <img 
+                src="assets/architect-woman-office.webp" 
+                alt="Lead Solutions Architect reviewing multi-region cloud topology" 
+                width="800" 
+                height="597" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/engineer-man-smiling.webp" 
+                alt="Senior Systems Engineer smiling in modern tech lab" 
+                width="800" 
+                height="597" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/service-developer-desk.webp" 
+                alt="Full-Stack Developer workstation with distributed system telemetry" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/service-engineers-collaborating.webp" 
+                alt="Enterprise cloud architects collaborating on Kubernetes migration" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <!-- Mosaic Content -->
+          <div class="mosaic-content">
+            <span class="mosaic-badge">Experienced Engineers</span>
+            <h2 id="mosaic-heading">IT Solution Services From Battle-Tested Architects</h2>
+            <p class="lead-p">
+              Stackly pairs enterprise engineering leaders with principal architects who have built and operated mission-critical infrastructure at global scale.
+            </p>
+
+            <ul class="mosaic-checklist">
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>We are committed to delivering resilient, active-active multi-cloud architectures.</span>
+              </li>
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>Direct, hands-on collaboration with Senior Fellows and SRE specialists.</span>
+              </li>
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>Proven methodologies for sub-15 minute MTTR and continuous compliance.</span>
+              </li>
+            </ul>
+
+            <div class="mosaic-highlights-row">
+              <div class="mosaic-highlight-item">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>Creative &amp; Proven</h4>
+                  <p>Battle-tested across Tier-1 financial, automotive, and healthcare ledgers.</p>
+                </div>
+              </div>
+
+              <div class="mosaic-highlight-item">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>24/7/365 SRE Support</h4>
+                  <p>Rapid MTTR escalation with automated self-healing Kubernetes clusters.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1.25rem;">
+              <a href="services.html" class="btn btn-primary">Discover Services &rarr;</a>
+              <a href="contact.html" class="btn btn-outline">Meet An Architect &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Metric Stats Ribbon Bar (Reference Image 3) -->
+        <div class="stats-ribbon-bar">
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">440<span>+</span></div>
+            <div class="ribbon-stat-label">Satisfied Enterprise Clients</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">62<span>+</span></div>
+            <div class="ribbon-stat-label">Cloud Modernizations Completed</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">44<span>+</span></div>
+            <div class="ribbon-stat-label">Security &amp; ISO Accreditations</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">53<span>+</span></div>
+            <div class="ribbon-stat-label">Principal &amp; Staff Engineers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Why Choose Us: 4-Card Capability Matrix (Reference Layout 3)
+         ======================================================================== -->
+    <section class="why-choose-section" aria-labelledby="why-choose-heading">
+      <div class="container">
+        <div class="section-header" style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">
+          <div class="badge badge-cyan" style="margin-bottom:0.75rem;">Why Choose Us</div>
+          <h2 id="why-choose-heading" style="color:#ffffff; font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.75rem;">
+            Few Reasons Why You Should Choose Us
+          </h2>
+          <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6;">
+            We engineer high-throughput systems, deterministic agentic intelligence, and airtight cyber resilience that withstand modern enterprise scale.
+          </p>
+        </div>
+
+        <div class="why-choose-grid">
+          <!-- Card 1 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Product Architecture &amp; UI</h3>
+              <p>Engineering reactive micro-frontends and high-performance design systems that streamline complex enterprise operations.</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Big Data &amp; Streaming Analytics</h3>
+              <p>Sub-12ms event streaming via ClickHouse, Apache Kafka, and lakehouse architectures processing millions of telemetry events per second.</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Maintain &amp; Scale App Data</h3>
+              <p>Autonomous compute auto-scaling, PostgreSQL / CockroachDB multi-region replication, and FinOps waste elimination algorithms.</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Cyber Security &amp; Zero-Trust</h3>
+              <p>Transparent mTLS with Cilium eBPF, Sigstore immutable container signing, and continuous SOC2 / HIPAA automated verification.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4-Tile Photo Mosaic & Experienced Engineers (Reference Layout 3)
+         ======================================================================== -->
+    <section class="mosaic-experience-section" aria-labelledby="mosaic-heading">
+      <div class="container">
+        <div class="mosaic-layout">
+          <!-- 4-Photo Collage Grid -->
+          <div class="photo-mosaic-grid">
+            <div class="mosaic-tile">
+              <img 
+                src="assets/architect-woman-office.webp" 
+                alt="Lead Solutions Architect reviewing multi-region cloud topology" 
+                width="800" 
+                height="597" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/engineer-man-smiling.webp" 
+                alt="Senior Systems Engineer smiling in modern tech lab" 
+                width="800" 
+                height="597" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/service-developer-desk.webp" 
+                alt="Full-Stack Developer workstation with distributed system telemetry" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/service-engineers-collaborating.webp" 
+                alt="Enterprise cloud architects collaborating on Kubernetes migration" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <!-- Mosaic Content -->
+          <div class="mosaic-content">
+            <span class="mosaic-badge">Experienced Engineers</span>
+            <h2 id="mosaic-heading">IT Solution Services From Battle-Tested Architects</h2>
+            <p class="lead-p">
+              Stackly pairs enterprise engineering leaders with principal architects who have built and operated mission-critical infrastructure at global scale.
+            </p>
+
+            <ul class="mosaic-checklist">
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>We are committed to delivering resilient, active-active multi-cloud architectures.</span>
+              </li>
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>Direct, hands-on collaboration with Senior Fellows and SRE specialists.</span>
+              </li>
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>Proven methodologies for sub-15 minute MTTR and continuous compliance.</span>
+              </li>
+            </ul>
+
+            <div class="mosaic-highlights-row">
+              <div class="mosaic-highlight-item">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>Creative &amp; Proven</h4>
+                  <p>Battle-tested across Tier-1 financial, automotive, and healthcare ledgers.</p>
+                </div>
+              </div>
+
+              <div class="mosaic-highlight-item">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>24/7/365 SRE Support</h4>
+                  <p>Rapid MTTR escalation with automated self-healing Kubernetes clusters.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1.25rem;">
+              <a href="services.html" class="btn btn-primary">Discover Services &rarr;</a>
+              <a href="contact.html" class="btn btn-outline">Meet An Architect &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Metric Stats Ribbon Bar (Reference Image 3) -->
+        <div class="stats-ribbon-bar">
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">440<span>+</span></div>
+            <div class="ribbon-stat-label">Satisfied Enterprise Clients</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">62<span>+</span></div>
+            <div class="ribbon-stat-label">Cloud Modernizations Completed</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">44<span>+</span></div>
+            <div class="ribbon-stat-label">Security &amp; ISO Accreditations</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">53<span>+</span></div>
+            <div class="ribbon-stat-label">Principal &amp; Staff Engineers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Why Choose Us: 4-Card Capability Matrix (Reference Layout 3)
+         ======================================================================== -->
+    <section class="why-choose-section" aria-labelledby="why-choose-heading">
+      <div class="container">
+        <div class="section-header" style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">
+          <div class="badge badge-cyan" style="margin-bottom:0.75rem;">Why Choose Us</div>
+          <h2 id="why-choose-heading" style="color:#ffffff; font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.75rem;">
+            Few Reasons Why You Should Choose Us
+          </h2>
+          <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6;">
+            We engineer high-throughput systems, deterministic agentic intelligence, and airtight cyber resilience that withstand modern enterprise scale.
+          </p>
+        </div>
+
+        <div class="why-choose-grid">
+          <!-- Card 1 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Product Architecture &amp; UI</h3>
+              <p>Engineering reactive micro-frontends and high-performance design systems that streamline complex enterprise operations.</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Big Data &amp; Streaming Analytics</h3>
+              <p>Sub-12ms event streaming via ClickHouse, Apache Kafka, and lakehouse architectures processing millions of telemetry events per second.</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Maintain &amp; Scale App Data</h3>
+              <p>Autonomous compute auto-scaling, PostgreSQL / CockroachDB multi-region replication, and FinOps waste elimination algorithms.</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Cyber Security &amp; Zero-Trust</h3>
+              <p>Transparent mTLS with Cilium eBPF, Sigstore immutable container signing, and continuous SOC2 / HIPAA automated verification.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Our Service: Ambient HUD Rings & 3 Featured Real Photo Cards (Reference Image 1)
+         ======================================================================== -->
+    <section class="our-service-hud-section" aria-labelledby="our-service-heading">
+      <!-- Ambient HUD Backdrop -->
+      <div class="hud-backdrop" aria-hidden="true">
+        <div class="hud-circles-container">
+          <div class="hud-circle-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <div class="hud-circle-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
+          <div class="hud-circle-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="position:relative; z-index:2;">
+        <div class="section-header" style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">
+          <div class="badge badge-cyan" style="margin-bottom:0.75rem;">Our Core Practices</div>
+          <h2 id="our-service-heading" style="color:#ffffff; font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.75rem;">
+            Our Service
+          </h2>
+          <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6;">
+            Architecting high-availability infrastructure, autonomous agentic systems, and zero-trust cyber resilience with human-centered engineering.
+          </p>
+        </div>
+
+        <!-- 3 Cards Row -->
+        <div class="service-cards-row">
+          <!-- Card 1 -->
+          <article class="service-card-ref">
+            <div class="service-card-thumb">
+              <img 
+                src="assets/service-developer-desk.webp" 
+                alt="Digital Experience &amp; Modern UI/UX Architecture" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="service-card-content">
+              <div>
+                <h3>Digital Experience &amp; Modern UI/UX</h3>
+                <p>
+                  Architecting intuitive enterprise digital experiences, responsive design systems, and rapid prototyping workflows for global scale.
+                </p>
+              </div>
+              <div class="service-card-actions">
+                <a href="services.html" class="btn-read-more">Read More</a>
+                <span style="font-size:0.75rem; color:#64748b; font-family:var(--font-mono); font-weight:600;">PRACTICE 01</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 (Elevated / Featured) -->
+          <article class="service-card-ref featured">
+            <div class="service-card-thumb">
+              <img 
+                src="assets/service-engineer-window.webp" 
+                alt="Multi-Region Cloud &amp; Kubernetes Modernization" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="service-card-content">
+              <div>
+                <h3>Multi-Region Cloud &amp; Kubernetes</h3>
+                <p>
+                  Deploying resilient distributed clusters with Karpenter autoscaling, Cilium eBPF networking, and GitOps pipelines with 99.999% SLA.
+                </p>
+              </div>
+              <div class="service-card-actions">
+                <a href="services.html" class="btn-read-more" style="background:#0284c7;">Read More</a>
+                <span style="font-size:0.75rem; color:#0284c7; font-family:var(--font-mono); font-weight:700;">FEATURED</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="service-card-ref">
+            <div class="service-card-thumb">
+              <img 
+                src="assets/service-engineers-collaborating.webp" 
+                alt="Data Analytics &amp; Agentic AI Systems" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="service-card-content">
+              <div>
+                <h3>Data Analytics &amp; Agentic AI</h3>
+                <p>
+                  Engineering high-throughput telemetry pipelines, automated LangGraph agent swarms, and enterprise data mesh with zero data leakage.
+                </p>
+              </div>
+              <div class="service-card-actions">
+                <a href="services.html" class="btn-read-more">Read More</a>
+                <span style="font-size:0.75rem; color:#64748b; font-family:var(--font-mono); font-weight:600;">PRACTICE 03</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Credibility Section: We Are More Than Just A Company (Reference Image 2)
+         ======================================================================== -->
+    <section class="credibility-section" aria-labelledby="credibility-heading">
+      <div class="container">
+        <div class="credibility-grid">
+          <div class="credibility-content">
+            <span class="credibility-badge">Who We Are</span>
+            <h2 id="credibility-heading">We are more than just a company</h2>
+            <p>
+              We are architects of innovation, trail-blazers of technological advancement, and partners in your enterprise journey. At Stackly, we thrive on transforming complex distributed systems into decisive competitive advantages.
+            </p>
+
+            <div class="credibility-stats">
+              <div class="stat-box">
+                <div class="stat-num">12<span>+</span></div>
+                <div class="stat-label">Years of enterprise experience in cloud architecture and software engineering.</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-num">50<span>+</span></div>
+                <div class="stat-label">Global enterprises and high-growth scaleups successfully modernized.</div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1.25rem;">
+              <a href="contact.html" class="btn btn-primary">Learn More &rarr;</a>
+              <a href="case-studies.html" class="btn btn-outline">Our Work &rarr;</a>
+            </div>
+          </div>
+
+          <div class="credibility-photo-wrap">
+            <img 
+              src="assets/team-collaborating-modern.webp" 
+              alt="Stackly Enterprise Technology Consulting Team in Modern Office" 
+              width="800" 
+              height="447" 
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Portfolio Showcase Section (Reference Image 1)
+         ======================================================================== -->
+    <section class="portfolio-showcase-section" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <div class="section-header" style="margin-bottom:1.5rem;">
+          <div class="badge badge-emerald">Selected Works</div>
+          <h2 id="portfolio-heading" style="font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em;">
+            Portfolio
+          </h2>
+          <p>Groundbreaking enterprise transformations delivered across high-scale banking, telecom, and healthcare networks.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Left Featured Hero Card -->
+          <article class="portfolio-hero-card">
+            <img 
+              src="assets/portfolio-executive-presentation.webp" 
+              alt="Executive Strategy Presentation - Innovative Solutions for a Stellar Future" 
+              class="portfolio-bg-img"
+              width="800" 
+              height="447" 
+              loading="lazy"
+            >
+            <div class="portfolio-overlay"></div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Enterprise Transformation</span>
+              <h3>Innovative Solutions For A Stellar Future</h3>
+              <p>
+                Modernizing core banking ledgers and distributed transaction pipelines with zero cutover downtime and active-active multi-region reliability.
+              </p>
+              <a href="case-studies.html" class="btn btn-primary btn-sm">Explore Case Study &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Right Side Card with Motivation & Metrics -->
+          <article class="portfolio-side-card">
+            <div>
+              <span class="side-card-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                Motivation &amp; Execution
+              </span>
+              <h4>Enterprise Cloud Modernization &amp; DevSecOps Acceleration</h4>
+              <p>
+                Partnering with engineering leadership to build high-velocity release engines, automated policy-as-code, and resilient distributed systems.
+              </p>
+              <div class="side-card-photo">
+                <img 
+                  src="assets/team-collaborating-modern.webp" 
+                  alt="Stackly Architects Collaborating on Digital Transformation" 
+                  width="800" 
+                  height="447" 
+                  loading="lazy"
+                >
+              </div>
+            </div>
+
+            <div class="side-card-metrics">
+              <div>
+                <div class="metric-val">+140%</div>
+                <div class="metric-desc">Delivery Velocity Increase</div>
+              </div>
+              <div>
+                <div class="metric-val">-42%</div>
+                <div class="metric-desc">Incident MTTR Reduction</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Core Services Bento Grid (Overview -> links to services.html)
+         ======================================================================== -->
+    <section class="section" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Stackly Practices</div>
+          <h2 id="services-heading">Architectural Disciplines Built for Global Scale</h2>
+          <p>Explore our deep transformation practices or visit the <a href="services.html" style="color:var(--brand-cyan);text-decoration:underline;">full Services Specification &rarr;</a></p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Bento Item 1: Cloud Architecture (Span 8) -->
+          <article class="bento-card span-8 card-glass">
+            <div>
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <h3>Multi-Region Kubernetes &amp; Cloud FinOps</h3>
+              <p>
+                Architecting resilient multi-region Kubernetes topologies, eBPF-powered Cilium service meshes, and automated cloud cost drift engines. We transition brittle monolithic backends into globally partitioned, self-healing platforms.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Multi-Cloud Federation &amp; Active-Active Failover (AWS, GCP, Azure)
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  eBPF Network Observability &amp; Wire-Speed Security Filtration
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer-meta">
+              <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                <a href="services.html" class="btn btn-outline btn-sm">Explore Practice &rarr;</a>
+                <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Kubernetes &amp; Cloud FinOps Walkthrough" style="margin-top:0;">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  Watch 2-Min Architecture Overview
+                </button>
+              </div>
+              <span class="stat-highlight">Avg. 38% Infra TCO Reduction</span>
+            </div>
+          </article>
+
+          <!-- Bento Item 2: AI & Agentic Workflows (Span 4) -->
+          <article class="bento-card span-4 card-glass cyan-theme">
+            <div>
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"></path>
+                  <path d="M16 14a6 6 0 0 1 6 6v2H2v-2a6 6 0 0 1 6-6"></path>
+                  <circle cx="12" cy="11" r="1"></circle>
+                </svg>
+              </div>
+              <h3>Agentic AI &amp; Cognitive Workflows</h3>
+              <p>
+                Productionize verifiable LLM agents with LangGraph, Model Context Protocol (MCP), and private quantized DeepSeek-R1 / vLLM clusters with zero data egress.
+              </p>
+            </div>
+            <div class="card-footer-meta">
+              <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                <a href="services.html" class="btn btn-outline btn-sm">Agentic Specs &rarr;</a>
+                <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Agentic AI &amp; LangGraph Pipeline Demo" style="margin-top:0;">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  Watch 2-Min Architecture Overview
+                </button>
+              </div>
+              <span class="stat-highlight">&lt; 85ms P99 Inference</span>
+            </div>
+          </article>
+
+          <!-- Bento Item 3: DevOps CI/CD (Span 6) -->
+          <article class="bento-card span-6 card-glass violet-theme">
+            <div>
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3>DevSecOps &amp; Declarative GitOps</h3>
+              <p>
+                Eliminate deployment drift and staging friction. We build self-service developer platforms with ArgoCD, OpenTofu, ephemeral preview staging, and hermetic build pipelines.
+              </p>
+            </div>
+            <div class="card-footer-meta">
+              <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                <a href="services.html" class="btn btn-outline btn-sm">GitOps Models &rarr;</a>
+                <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Declarative GitOps &amp; ArgoCD Pipeline Demo" style="margin-top:0;">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  Watch 2-Min Architecture Overview
+                </button>
+              </div>
+              <span class="stat-highlight">60+ Production Deploys/Day</span>
+            </div>
+          </article>
+
+          <!-- Bento Item 4: Cybersecurity (Span 6) -->
+          <article class="bento-card span-6 card-glass emerald-theme">
+            <div>
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <h3>Zero-Trust Cyber Resilience &amp; SASE</h3>
+              <p>
+                Cryptographic workload attestation using SPIFFE/SPIRE, Falco runtime kernel inspection, and automated FedRAMP / SOC2 compliance pipelines.
+              </p>
+            </div>
+            <div class="card-footer-meta">
+              <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                <a href="services.html" class="btn btn-outline btn-sm">Zero-Trust Audit &rarr;</a>
+                <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Zero-Trust Attestation &amp; Falco Runtime Demo" style="margin-top:0;">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  Watch 2-Min Architecture Overview
+                </button>
+              </div>
+              <span class="stat-highlight">FIPS 140-3 Cryptography</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         Latest Tools & Bleeding-Edge Matrix Preview
+         ======================================================================== -->
+    <section class="section" style="background:var(--bg-secondary);" aria-labelledby="tools-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-cyan">2026 Tooling Matrix</div>
+          <h2 id="tools-heading">Engineered with the Latest Cloud &amp; AI Tools</h2>
+          <p>
+            Stackly architects build strictly on proven modern standards. View our complete <a href="tech-stack.html" style="color:var(--brand-cyan);text-decoration:underline;">Interactive Tech Stack Page &rarr;</a>
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls" style="display:flex;justify-content:center;gap:0.75rem;margin-bottom:2.5rem;" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Modern Tools</button>
+          <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud &amp; Data Fabric</button>
+          <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">Agentic AI &amp; LLMs</button>
+          <button class="filter-btn" data-filter="security" role="tab" aria-selected="false">Zero-Trust &amp; Sec</button>
+          <button class="filter-btn" data-filter="devops" role="tab" aria-selected="false">GitOps &amp; IaC</button>
+        </div>
+
+        <div class="latest-tools-grid" role="region" aria-live="polite">
+          <!-- Dynamically populated by main.js with Kubernetes 1.32, Cilium, LangGraph, vLLM, DeepSeek, etc. -->
+        </div>
+
+        <div style="text-align:center;margin-top:3rem;">
+          <a href="tech-stack.html" class="btn btn-secondary btn-lg">
+            View Complete Tech Stack &amp; Benchmark Metrics
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         Client Case Studies Swiper Carousel
+         ======================================================================== -->
+    <section class="section" aria-labelledby="cases-preview-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Client Impact &amp; Case Studies</div>
+          <h2 id="cases-preview-heading">Real-World Enterprise Scale &amp; Telemetry</h2>
+          <p>
+            Real results across regulated industries. Read the <a href="case-studies.html" style="color:var(--brand-cyan);text-decoration:underline;">full Case Study Portfolio &rarr;</a>
+          </p>
+        </div>
+
+        <!-- Swiper Showcase Carousel -->
+        <div class="swiper-container-custom" role="region" aria-label="Enterprise Case Studies Carousel">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: Real Datacenter / FinTech -->
+            <div class="swiper-slide">
+              <div class="case-card" style="display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius-xl);overflow:hidden;">
+                <div class="case-thumb" style="height:100%;">
+                  <span class="case-tag">FinTech &bull; Core Ledger Modernization</span>
+                  <img 
+                    src="assets/real-datacenter.webp" 
+                    alt="Tier-1 Investment Bank Core Cloud Migration" 
+                    width="800" 
+                    height="500" 
+                    loading="lazy"
+                  >
+                </div>
+                <div class="case-body" style="padding:3rem;display:flex;flex-direction:column;justify-content:center;">
+                  <div class="badge badge-emerald" style="width:fit-content;margin-bottom:1rem;">Production Verified</div>
+                  <h3 style="font-size:1.75rem;margin-bottom:1rem;">Tier-1 Global Bank: Core Ledger Modernization</h3>
+                  <p style="font-size:1.05rem;line-height:1.6;margin-bottom:2rem;">
+                    Migrated 40-year-old mainframe ledger pipelines to a multi-region distributed Kafka &amp; CockroachDB mesh with zero cutover downtime.
+                  </p>
+                  <div class="case-metrics-row">
+                    <div class="case-metric">
+                      <div class="num">&lt; 8ms</div>
+                      <div class="desc">Settlement Latency</div>
+                    </div>
+                    <div class="case-metric">
+                      <div class="num">$14.2M</div>
+                      <div class="desc">Annual Cloud Savings</div>
+                    </div>
+                  </div>
+                  <div style="margin-top:2rem;">
+                    <a href="case-studies.html" class="btn btn-primary btn-sm">Read Full Architectural Case &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Real AI Lab / HealthCare -->
+            <div class="swiper-slide">
+              <div class="case-card" style="display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius-xl);overflow:hidden;">
+                <div class="case-thumb" style="height:100%;">
+                  <span class="case-tag">MedTech &bull; HIPAA Compliant AI</span>
+                  <img 
+                    src="assets/real-ai-lab.webp" 
+                    alt="MedTech HIPAA Compliant Agentic Diagnostic Data Platform" 
+                    width="800" 
+                    height="500" 
+                    loading="lazy"
+                  >
+                </div>
+                <div class="case-body" style="padding:3rem;display:flex;flex-direction:column;justify-content:center;">
+                  <div class="badge badge-cyan" style="width:fit-content;margin-bottom:1rem;">FHIR Standard Certified</div>
+                  <h3 style="font-size:1.75rem;margin-bottom:1rem;">HealthSystem Network: Agentic Diagnosis Engine</h3>
+                  <p style="font-size:1.05rem;line-height:1.6;margin-bottom:2rem;">
+                    Engineered private on-premise LLM agent clusters with FHIR standard compliance for clinical trial analysis across 18 regional hospital centers.
+                  </p>
+                  <div class="case-metrics-row">
+                    <div class="case-metric">
+                      <div class="num">100%</div>
+                      <div class="desc">HIPAA Enclave Isolation</div>
+                    </div>
+                    <div class="case-metric">
+                      <div class="num">7.4x</div>
+                      <div class="desc">Trial Ingestion Speed</div>
+                    </div>
+                  </div>
+                  <div style="margin-top:2rem;">
+                    <a href="case-studies.html" class="btn btn-primary btn-sm">Read Full Architectural Case &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Real DevOps Team / Autonomous Fleet -->
+            <div class="swiper-slide">
+              <div class="case-card" style="display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius-xl);overflow:hidden;">
+                <div class="case-thumb" style="height:100%;">
+                  <span class="case-tag">Automotive &bull; Edge Stream IoT</span>
+                  <img 
+                    src="assets/real-devops-team.webp" 
+                    alt="Autonomous Fleet 4.8M Events/Sec Telemetry Platform" 
+                    width="800" 
+                    height="500" 
+                    loading="lazy"
+                  >
+                </div>
+                <div class="case-body" style="padding:3rem;display:flex;flex-direction:column;justify-content:center;">
+                  <div class="badge badge-emerald" style="width:fit-content;margin-bottom:1rem;">Edge Ingress Ready</div>
+                  <h3 style="font-size:1.75rem;margin-bottom:1rem;">Autonomous Fleet: 4.8M Events/Sec Stream Platform</h3>
+                  <p style="font-size:1.05rem;line-height:1.6;margin-bottom:2rem;">
+                    Deployed edge Kubernetes nodes with ClickHouse lakehouse stream pipelines processing global autonomous vehicle sensor telemetry.
+                  </p>
+                  <div class="case-metrics-row">
+                    <div class="case-metric">
+                      <div class="num">4.8M</div>
+                      <div class="desc">Stream Ingestion / Sec</div>
+                    </div>
+                    <div class="case-metric">
+                      <div class="num">99.999%</div>
+                      <div class="desc">Edge Telemetry SLA</div>
+                    </div>
+                  </div>
+                  <div style="margin-top:2rem;">
+                    <a href="case-studies.html" class="btn btn-primary btn-sm">Read Full Architectural Case &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Controls Bar -->
+          <div class="swiper-controls-bar">
+            <button class="swiper-nav-btn swiper-btn-prev" aria-label="Previous Slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="swiper-pagination-dots" aria-label="Carousel pagination"></div>
+            <button class="swiper-nav-btn swiper-btn-next" aria-label="Next Slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4-Tile Photo Mosaic & Experienced Engineers (Reference Layout 3)
+         ======================================================================== -->
+    <section class="mosaic-experience-section" aria-labelledby="mosaic-heading">
+      <div class="container">
+        <div class="mosaic-layout">
+          <!-- 4-Photo Collage Grid -->
+          <div class="photo-mosaic-grid">
+            <div class="mosaic-tile">
+              <img 
+                src="assets/architect-woman-office.webp" 
+                alt="Lead Solutions Architect reviewing multi-region cloud topology" 
+                width="800" 
+                height="597" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/engineer-man-smiling.webp" 
+                alt="Senior Systems Engineer smiling in modern tech lab" 
+                width="800" 
+                height="597" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/service-developer-desk.webp" 
+                alt="Full-Stack Developer workstation with distributed system telemetry" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/service-engineers-collaborating.webp" 
+                alt="Enterprise cloud architects collaborating on Kubernetes migration" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <!-- Mosaic Content -->
+          <div class="mosaic-content">
+            <span class="mosaic-badge">Experienced Engineers</span>
+            <h2 id="mosaic-heading">IT Solution Services From Battle-Tested Architects</h2>
+            <p class="lead-p">
+              Stackly pairs enterprise engineering leaders with principal architects who have built and operated mission-critical infrastructure at global scale.
+            </p>
+
+            <ul class="mosaic-checklist">
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>We are committed to delivering resilient, active-active multi-cloud architectures.</span>
+              </li>
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>Direct, hands-on collaboration with Senior Fellows and SRE specialists.</span>
+              </li>
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>Proven methodologies for sub-15 minute MTTR and continuous compliance.</span>
+              </li>
+            </ul>
+
+            <div class="mosaic-highlights-row">
+              <div class="mosaic-highlight-item">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>Creative &amp; Proven</h4>
+                  <p>Battle-tested across Tier-1 financial, automotive, and healthcare ledgers.</p>
+                </div>
+              </div>
+
+              <div class="mosaic-highlight-item">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>24/7/365 SRE Support</h4>
+                  <p>Rapid MTTR escalation with automated self-healing Kubernetes clusters.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1.25rem;">
+              <a href="services.html" class="btn btn-primary">Discover Services &rarr;</a>
+              <a href="contact.html" class="btn btn-outline">Meet An Architect &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Metric Stats Ribbon Bar (Reference Image 3) -->
+        <div class="stats-ribbon-bar">
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">440<span>+</span></div>
+            <div class="ribbon-stat-label">Satisfied Enterprise Clients</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">62<span>+</span></div>
+            <div class="ribbon-stat-label">Cloud Modernizations Completed</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">44<span>+</span></div>
+            <div class="ribbon-stat-label">Security &amp; ISO Accreditations</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">53<span>+</span></div>
+            <div class="ribbon-stat-label">Principal &amp; Staff Engineers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Why Choose Us: 4-Card Capability Matrix (Reference Layout 3)
+         ======================================================================== -->
+    <section class="why-choose-section" aria-labelledby="why-choose-heading">
+      <div class="container">
+        <div class="section-header" style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">
+          <div class="badge badge-cyan" style="margin-bottom:0.75rem;">Why Choose Us</div>
+          <h2 id="why-choose-heading" style="color:#ffffff; font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.75rem;">
+            Few Reasons Why You Should Choose Us
+          </h2>
+          <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6;">
+            We engineer high-throughput systems, deterministic agentic intelligence, and airtight cyber resilience that withstand modern enterprise scale.
+          </p>
+        </div>
+
+        <div class="why-choose-grid">
+          <!-- Card 1 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Product Architecture &amp; UI</h3>
+              <p>Engineering reactive micro-frontends and high-performance design systems that streamline complex enterprise operations.</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Big Data &amp; Streaming Analytics</h3>
+              <p>Sub-12ms event streaming via ClickHouse, Apache Kafka, and lakehouse architectures processing millions of telemetry events per second.</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Maintain &amp; Scale App Data</h3>
+              <p>Autonomous compute auto-scaling, PostgreSQL / CockroachDB multi-region replication, and FinOps waste elimination algorithms.</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="why-choose-card">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="why-card-info">
+              <h3>Cyber Security &amp; Zero-Trust</h3>
+              <p>Transparent mTLS with Cilium eBPF, Sigstore immutable container signing, and continuous SOC2 / HIPAA automated verification.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Interactive ROI Calculator
+         ======================================================================== -->
+    <section id="calculator" class="section calculator-section" aria-labelledby="calc-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-emerald">Interactive Estimator</div>
+          <h2 id="calc-heading">Transformation ROI &amp; Velocity Calculator</h2>
+          <p>Model your projected cloud efficiency savings, time-to-market reduction, and testing velocity with Stackly architectural models.</p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="calc-inputs">
+            <div class="calc-group">
+              <div class="label-row">
+                <label for="calc-spend">Monthly Cloud &amp; Infra Spend ($ USD)</label>
+                <span id="calc-spend-val" class="current-val">$85,000/mo</span>
+              </div>
+              <input type="range" id="calc-spend" min="10000" max="500000" step="5000" value="85000" aria-label="Monthly Cloud Spend">
+              <div class="range-ticks">
+                <span>$10k/mo</span>
+                <span>$250k/mo</span>
+                <span>$500k+/mo</span>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <div class="label-row">
+                <label for="calc-team">Engineering Organization Size</label>
+                <span id="calc-team-val" class="current-val">45 engineers</span>
+              </div>
+              <input type="range" id="calc-team" min="5" max="250" step="5" value="45" aria-label="Engineering Team Size">
+              <div class="range-ticks">
+                <span>5 Eng</span>
+                <span>125 Eng</span>
+                <span>250+ Eng</span>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <div class="label-row">
+                <label>Legacy Monolith &amp; Tech Debt Factor</label>
+              </div>
+              <div class="debt-options" role="radiogroup" aria-label="Tech Debt Factor">
+                <button type="button" class="debt-btn" data-debt="1.0" role="radio" aria-checked="false">Low (Cloud Native)</button>
+                <button type="button" class="debt-btn active" data-debt="1.6" role="radio" aria-checked="true">Moderate (Hybrid)</button>
+                <button type="button" class="debt-btn" data-debt="2.4" role="radio" aria-checked="false">Critical (Monolithic)</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-outputs" aria-live="polite">
+            <div class="output-header">
+              <div class="output-subtitle">Projected Transformation Returns</div>
+              <h3>Accelerated Engagement Model</h3>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-block">
+                <div class="label">Est. Annual Cloud Cost Savings</div>
+                <div id="out-savings" class="number">$367,200</div>
+              </div>
+              <div class="metric-block indigo">
+                <div class="label">Time to Market Acceleration</div>
+                <div id="out-time" class="number">-10 Weeks</div>
+              </div>
+              <div class="metric-block cyan">
+                <div class="label">Automated Delivery Velocity</div>
+                <div id="out-velocity" class="number">+81%</div>
+              </div>
+              <div class="metric-block">
+                <div class="label">Security Attestation SLA</div>
+                <div class="number" style="color:var(--brand-emerald)">100% Ready</div>
+              </div>
+            </div>
+
+            <div class="roi-badge-box">
+              <div class="roi-text">Estimated Net Engagement ROI</div>
+              <div id="out-roi" class="roi-val">4.2x Net</div>
+            </div>
+
+            <a href="contact.html" class="btn btn-primary btn-block">
+              Lock in Custom Strategy Assessment
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         Verified Client Testimonials Swiper Carousel
+         ======================================================================== -->
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Peer Reviews</div>
+          <h2 id="testimonials-heading">Trusted by Engineering Leaders</h2>
+          <p>What CTOs and VP Engineers say about partnering with Stackly.</p>
+        </div>
+
+        <div class="swiper-container-custom" role="region" aria-label="Client Testimonials Slider">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide">
+              <div class="card-glass" style="padding:3rem;max-width:820px;margin-inline:auto;">
+                <blockquote style="font-size:1.2rem;line-height:1.7;color:var(--text-primary);margin-bottom:2rem;font-style:italic;">
+                  &ldquo;Stackly re-architected our transaction settlement pipeline across 3 cloud regions. Our P99 latency dropped from 140ms to 8ms with zero downtime during cutover. Their team operates as true principal engineers.&rdquo;
+                </blockquote>
+                <div style="display:flex;align-items:center;gap:1.25rem;">
+                  <div style="width:56px;height:56px;border-radius:50%;overflow:hidden;border:2px solid var(--brand-indigo);">
+                    <img src="assets/real-avatar-elena.webp" alt="Elena Vance, CTO at Apex Financial" width="240" height="240" loading="lazy">
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:1.05rem;color:var(--text-primary)">Elena Vance</div>
+                    <div style="font-size:0.85rem;color:var(--text-muted)">Chief Technology Officer &bull; Apex Financial Technologies</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide">
+              <div class="card-glass" style="padding:3rem;max-width:820px;margin-inline:auto;">
+                <blockquote style="font-size:1.2rem;line-height:1.7;color:var(--text-primary);margin-bottom:2rem;font-style:italic;">
+                  &ldquo;Stackly deployed an agentic clinical diagnosis pipeline across our 18 healthcare centers in 90 days. Their deep understanding of zero-data-egress LLM inference and HIPAA enclaves is unmatched.&rdquo;
+                </blockquote>
+                <div style="display:flex;align-items:center;gap:1.25rem;">
+                  <div style="width:56px;height:56px;border-radius:50%;overflow:hidden;border:2px solid var(--brand-cyan);">
+                    <img src="assets/real-avatar-sophia.webp" alt="Dr. Sophia Chen, Chief Data & AI Officer" width="240" height="240" loading="lazy">
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:1.05rem;color:var(--text-primary)">Dr. Sophia Chen</div>
+                    <div style="font-size:0.85rem;color:var(--text-muted)">Chief Data &amp; AI Officer &bull; NeuroDrive Health Edge</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-controls-bar">
+            <button class="swiper-nav-btn swiper-btn-prev" aria-label="Previous Testimonial">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="swiper-pagination-dots"></div>
+            <button class="swiper-nav-btn swiper-btn-next" aria-label="Next Testimonial">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         Lead Capture & RFP Banner (Links to dedicated contact.html)
+         ======================================================================== -->
+    <section class="section" style="background:var(--bg-secondary);padding-block:4rem;" aria-label="Start Engagement">
+      <div class="container" style="text-align:center;">
+        <div class="badge badge-cyan" style="margin-bottom:1rem;">Ready for Cutover?</div>
+        <h2 style="font-size:2.5rem;margin-bottom:1rem;">Initiate an Architecture Review with Stackly</h2>
+        <p style="max-width:640px;margin-inline:auto;margin-bottom:2rem;color:var(--text-secondary);font-size:1.1rem;">
+          Connect directly with a Principal Fellow Architect. We guarantee SLA response in under 4 hours for enterprise RFPs.
+        </p>
+        <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Submit Architecture RFP &rarr;</a>
+          <a href="services.html" class="btn btn-secondary btn-lg">Review Practice Deliverables</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       Video Walkthrough Modal (Plays assets/demo-video.mp4)
+       ======================================================================== -->
+  <div id="video-walkthrough-modal" class="video-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="video-title">
+    <div class="video-modal-content">
+      <div class="video-modal-header">
+        <h3 id="video-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--brand-cyan);">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          Stackly Architecture Walkthrough &amp; Telemetry Demo
+        </h3>
+        <button type="button" class="btn-close-video" aria-label="Close video player">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="video-player-frame">
+        <video id="demo-video-player" controls preload="metadata" playsinline>
+          <source src="assets/demo-video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video streaming.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Global Footer (Stackly Branding; all social links route to 404.html)
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+            <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" loading="lazy">
+          </a>
+          <p>
+            Architecting resilient, autonomous enterprise platforms. Practices in North America, EMEA, and APAC.
+          </p>
+
+          <!-- Social Links explicitly pointing to 404.html per requirement -->
+          <div class="social-links" aria-label="Social Media Channels">
+            <a href="404.html" class="social-icon-link" aria-label="Stackly on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="404.html" class="social-icon-link" aria-label="Stackly on X Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+            <a href="404.html" class="social-icon-link" aria-label="Stackly on GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+            <a href="404.html" class="social-icon-link" aria-label="Stackly on YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Separate Pages</h4>
+          <ul>
+            <li><a href="services.html">Services &amp; Architecture</a></li>
+            <li><a href="tech-stack.html">Latest Tools &amp; Matrix</a></li>
+            <li><a href="case-studies.html">Case Studies &amp; Impact</a></li>
+            <li><a href="contact.html">Advisory Consultation RFP</a></li>
+            <li><a href="login.html">Client Portal Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Global Hubs</h4>
+          <ul>
+            <li><a href="contact.html">San Francisco &bull; Core</a></li>
+            <li><a href="contact.html">New York &bull; Financial</a></li>
+            <li><a href="contact.html">London &bull; EMEA Hub</a></li>
+            <li><a href="contact.html">Singapore &bull; APAC</a></li>
+            <li><a href="contact.html">Zurich &bull; Quantum Lab</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Stackly Intelligence</h4>
+          <p>Quarterly peer-reviewed engineering journal on distributed systems, AI memory lakes, and zero-trust.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed', 'Added to Stackly Quarterly Journal.', 'success');">
+            <input type="email" placeholder="cto@firm.com" required aria-label="Work Email Address">
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Systems, LLC. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="404.html">Security Disclosures</a>
+          <a href="404.html">Master Services Agreement</a>
+          <a href="404.html">SOC2 Type II Report</a>
+          <a href="404.html">Privacy Shield</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

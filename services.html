@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture &amp; Modernization Services | Stackly Systems</title>
+  <meta name="description" content="Enterprise multi-region Kubernetes federation, agentic AI pipelines, GitOps continuous delivery, and zero-trust security architecture.">
+  <meta name="theme-color" content="#070a13">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" fetchpriority="high">
+      </a>
+
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link active">Solutions <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="tech-stack.html" class="nav-link">Tech Stack <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="case-studies.html" class="nav-link">Case Studies <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="contact.html" class="btn-consultation">Work With Us</a>
+        <button class="theme-toggle-btn" aria-label="Toggle visual theme mode" type="button">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm" style="border-radius:var(--radius-full);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;margin-right:0.25rem;">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          Log In
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Services Dynamic Hero Slider Carousel (Unique to Services Page) -->
+    <section class="services-hero-slider" aria-label="Enterprise Practice Showcase">
+      <div class="services-slider-container">
+        <!-- Slide 1: Multi-Region Kubernetes & FinOps -->
+        <div class="services-slide active" data-slide-index="0">
+          <div class="slide-content">
+            <div class="badge badge-cyan">
+              <span class="pulse-dot"></span> Practice 01 &bull; Cloud Infrastructure
+            </div>
+            <h1>Multi-Region Kubernetes &amp; FinOps Mesh</h1>
+            <p>
+              High-availability multi-region clusters with active-active traffic failover, Cilium eBPF wire-speed observability, and automated cost circuit breakers.
+            </p>
+            <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+              <a href="contact.html" class="btn btn-primary">Request Architecture Review &rarr;</a>
+              <button type="button" class="btn btn-outline open-video-modal-btn" data-video-title="Multi-Region Kubernetes &amp; FinOps Walkthrough">
+                Watch 2-Min Demo
+              </button>
+            </div>
+          </div>
+          <div class="slide-image-frame">
+            <img src="assets/real-datacenter.webp" alt="Multi-Region Datacenter Infrastructure" width="800" height="500" fetchpriority="high">
+            <div class="slide-badge-overlay">
+              <div>
+                <div class="stat-val">&gt; 99.999%</div>
+                <div class="stat-lbl">Federated SLA</div>
+              </div>
+              <div>
+                <div class="stat-val">38%</div>
+                <div class="stat-lbl">Avg FinOps Savings</div>
+              </div>
+              <div>
+                <div class="stat-val">&lt; 15 min</div>
+                <div class="stat-lbl">MTTR Recovery</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Agentic AI & Private LLMs -->
+        <div class="services-slide" data-slide-index="1">
+          <div class="slide-content">
+            <div class="badge badge-cyan" style="border-color:rgba(168,85,247,0.4); color:#c084fc;">
+              <span class="pulse-dot" style="background:#a855f7;"></span> Practice 02 &bull; Cognitive AI
+            </div>
+            <h1>Agentic AI &amp; Private LLM Serving</h1>
+            <p>
+              Deterministic agentic state machines with LangGraph and Model Context Protocol (MCP). Zero-egress private inference on your dedicated vLLM clusters.
+            </p>
+            <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+              <a href="contact.html" class="btn btn-primary">Schedule AI Blueprint &rarr;</a>
+              <button type="button" class="btn btn-outline open-video-modal-btn" data-video-title="Agentic AI &amp; Private LLM Serving Demo">
+                Watch AI Walkthrough
+              </button>
+            </div>
+          </div>
+          <div class="slide-image-frame">
+            <img src="assets/real-ai-lab.webp" alt="Stackly Cognitive AI &amp; Neural Network Lab" width="800" height="500" loading="lazy">
+            <div class="slide-badge-overlay">
+              <div>
+                <div class="stat-val">Zero Egress</div>
+                <div class="stat-lbl">VPC Isolation</div>
+              </div>
+              <div>
+                <div class="stat-val">DeepSeek-R1</div>
+                <div class="stat-lbl">Quantized vLLM</div>
+              </div>
+              <div>
+                <div class="stat-val">100%</div>
+                <div class="stat-lbl">Deterministic MCP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Declarative GitOps -->
+        <div class="services-slide" data-slide-index="2">
+          <div class="slide-content">
+            <div class="badge badge-emerald">
+              <span class="pulse-dot" style="background:var(--brand-emerald);"></span> Practice 03 &bull; Continuous Delivery
+            </div>
+            <h1>Declarative GitOps &amp; Ephemeral Platforms</h1>
+            <p>
+              Eradicate environment drift. Every infrastructure change is version-controlled via OpenTofu and ArgoCD, triggering automatic preview staging.
+            </p>
+            <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+              <a href="contact.html" class="btn btn-primary">Accelerate DORA Velocity &rarr;</a>
+              <a href="tech-stack.html" class="btn btn-outline">Inspect Tooling Matrix &rarr;</a>
+            </div>
+          </div>
+          <div class="slide-image-frame">
+            <img src="assets/real-devops-team.webp" alt="GitOps Engineering Team" width="800" height="500" loading="lazy">
+            <div class="slide-badge-overlay">
+              <div>
+                <div class="stat-val">&lt; 3 Min</div>
+                <div class="stat-lbl">Deploy Velocity</div>
+              </div>
+              <div>
+                <div class="stat-val">Sigstore</div>
+                <div class="stat-lbl">Hermetic Signing</div>
+              </div>
+              <div>
+                <div class="stat-val">0 Sec</div>
+                <div class="stat-lbl">Canary Downtime</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <div class="slider-controls-wrap">
+          <div class="slider-dots">
+            <button class="slider-dot-btn active" data-go-slide="0" aria-label="Go to slide 1"></button>
+            <button class="slider-dot-btn" data-go-slide="1" aria-label="Go to slide 2"></button>
+            <button class="slider-dot-btn" data-go-slide="2" aria-label="Go to slide 3"></button>
+          </div>
+          <div class="slider-arrows">
+            <button class="slider-arrow-btn" id="services-slide-prev" aria-label="Previous Slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="slider-arrow-btn" id="services-slide-next" aria-label="Next Slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted Enterprise Partners Marquee Strip (Reference Layout 2 & 3) -->
+    <section class="partner-logo-strip" aria-label="Trusted Enterprise Partners">
+      <div class="container">
+        <div class="partner-strip-title">Trusted by Modern CTOs &amp; Engineering Teams Worldwide</div>
+        <div class="partner-logos-wrap">
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            GlobexBank
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            CloudWatch
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            Epicurove
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            BioSynthesis
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Interlock Global
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Tile Photo Mosaic & Experienced Engineers (Reference Layout 3) -->
+    <section class="mosaic-experience-section" aria-labelledby="mosaic-services-heading">
+      <div class="container">
+        <div class="mosaic-layout">
+          <!-- 4-Photo Collage Grid -->
+          <div class="photo-mosaic-grid">
+            <div class="mosaic-tile">
+              <img 
+                src="assets/architect-woman-office.webp" 
+                alt="Lead Solutions Architect reviewing multi-region cloud topology" 
+                width="800" 
+                height="597" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/engineer-man-smiling.webp" 
+                alt="Senior Systems Engineer smiling in modern tech lab" 
+                width="800" 
+                height="597" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/service-developer-desk.webp" 
+                alt="Full-Stack Developer workstation with distributed system telemetry" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="mosaic-tile">
+              <img 
+                src="assets/service-engineers-collaborating.webp" 
+                alt="Enterprise cloud architects collaborating on Kubernetes migration" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <!-- Mosaic Content -->
+          <div class="mosaic-content">
+            <span class="mosaic-badge">Experienced Engineers</span>
+            <h2 id="mosaic-services-heading">IT Solution Services From Battle-Tested Architects</h2>
+            <p class="lead-p">
+              Stackly pairs enterprise engineering leaders with principal architects who have built and operated mission-critical infrastructure at global scale.
+            </p>
+
+            <ul class="mosaic-checklist">
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>We are committed to delivering resilient, active-active multi-cloud architectures.</span>
+              </li>
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>Direct, hands-on collaboration with Senior Fellows and SRE specialists.</span>
+              </li>
+              <li>
+                <div class="check-icon-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span>Proven methodologies for sub-15 minute MTTR and continuous compliance.</span>
+              </li>
+            </ul>
+
+            <div class="mosaic-highlights-row">
+              <div class="mosaic-highlight-item">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>Creative &amp; Proven</h4>
+                  <p>Battle-tested across Tier-1 financial, automotive, and healthcare ledgers.</p>
+                </div>
+              </div>
+
+              <div class="mosaic-highlight-item">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>24/7/365 SRE Support</h4>
+                  <p>Rapid MTTR escalation with automated self-healing Kubernetes clusters.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1.25rem;">
+              <a href="contact.html" class="btn btn-primary">Request Architecture Review &rarr;</a>
+              <a href="case-studies.html" class="btn btn-outline">Verified Outcomes &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Metric Stats Ribbon Bar (Reference Image 3) -->
+        <div class="stats-ribbon-bar">
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">440<span>+</span></div>
+            <div class="ribbon-stat-label">Satisfied Enterprise Clients</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">62<span>+</span></div>
+            <div class="ribbon-stat-label">Cloud Modernizations Completed</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">44<span>+</span></div>
+            <div class="ribbon-stat-label">Security &amp; ISO Accreditations</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">53<span>+</span></div>
+            <div class="ribbon-stat-label">Principal &amp; Staff Engineers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Help You: 6-Card Enterprise Capabilities Grid (Reference Layout 2) -->
+    <section class="how-we-help-section" aria-labelledby="how-we-help-heading">
+      <div class="container">
+        <div class="section-header" style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">
+          <div class="badge badge-cyan" style="margin-bottom:0.75rem;">What We Do</div>
+          <h2 id="how-we-help-heading" style="color:#ffffff; font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.75rem;">
+            How We Help You
+          </h2>
+          <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6;">
+            End-to-end modernization pathways designed to accelerate deployment frequency, enforce zero-trust security, and unlock autonomous AI intelligence.
+          </p>
+        </div>
+
+        <div class="how-we-help-grid">
+          <!-- Card 1 -->
+          <article class="how-card">
+            <div>
+              <h3 class="how-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--brand-cyan);"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                Digital Consulting
+              </h3>
+              <p class="how-card-desc">
+                Delivering top enterprise experiences to your business through custom system blueprints and the implementation of cutting-edge distributed technologies.
+              </p>
+            </div>
+            <a href="contact.html" class="btn-how-learn">Learn More &rarr;</a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="how-card">
+            <div>
+              <h3 class="how-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--brand-emerald);"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                Custom Software Development
+              </h3>
+              <p class="how-card-desc">
+                Tailor-made software architectures engineered to optimize your high-throughput transactions, eliminate tech debt, and enhance end-user reliability.
+              </p>
+            </div>
+            <a href="contact.html" class="btn-how-learn">Learn More &rarr;</a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="how-card">
+            <div>
+              <h3 class="how-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--brand-indigo-light);"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                Data Analytics and Insights
+              </h3>
+              <p class="how-card-desc">
+                Unlocking the power of streaming telemetry to extract actionable insights, drive automated operational decisions, and elevate infrastructure ROI.
+              </p>
+            </div>
+            <a href="contact.html" class="btn-how-learn">Learn More &rarr;</a>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="how-card">
+            <div>
+              <h3 class="how-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:#a855f7;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                Mobile App Development
+              </h3>
+              <p class="how-card-desc">
+                Crafting intuitive, highly secure native and cross-platform enterprise mobile applications connecting seamlessly to your Kubernetes API mesh.
+              </p>
+            </div>
+            <a href="contact.html" class="btn-how-learn">Learn More &rarr;</a>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="how-card">
+            <div>
+              <h3 class="how-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--brand-cyan);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Cybersecurity Solutions
+              </h3>
+              <p class="how-card-desc">
+                Comprehensive end-to-end zero-trust audits, Cilium eBPF network encryption, Sigstore container attestation, and SOC2 / HIPAA automated compliance.
+              </p>
+            </div>
+            <a href="contact.html" class="btn-how-learn">Learn More &rarr;</a>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="how-card">
+            <div>
+              <h3 class="how-card-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--brand-emerald);"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                Cloud Services and Migration
+              </h3>
+              <p class="how-card-desc">
+                Accelerate your multi-cloud migration with zero-downtime cutover strategies, automated FinOps cost governors, and 99.999% availability SLAs.
+              </p>
+            </div>
+            <a href="contact.html" class="btn-how-learn">Learn More &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Service: Ambient HUD Rings & 3 Featured Real Photo Cards (Reference Image 1) -->
+    <section class="our-service-hud-section" aria-labelledby="our-service-heading">
+      <!-- Ambient HUD Backdrop -->
+      <div class="hud-backdrop" aria-hidden="true">
+        <div class="hud-circles-container">
+          <div class="hud-circle-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <div class="hud-circle-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
+          <div class="hud-circle-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="position:relative; z-index:2;">
+        <div class="section-header" style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">
+          <div class="badge badge-cyan" style="margin-bottom:0.75rem;">Our Core Practices</div>
+          <h2 id="our-service-heading" style="color:#ffffff; font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.75rem;">
+            Our Service
+          </h2>
+          <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6;">
+            Architecting high-availability infrastructure, autonomous agentic systems, and zero-trust cyber resilience with human-centered engineering.
+          </p>
+        </div>
+
+        <!-- 3 Cards Row -->
+        <div class="service-cards-row">
+          <!-- Card 1 -->
+          <article class="service-card-ref">
+            <div class="service-card-thumb">
+              <img 
+                src="assets/service-developer-desk.webp" 
+                alt="Digital Experience &amp; Modern UI/UX Architecture" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="service-card-content">
+              <h3>Full-Stack System Architecture</h3>
+              <p>Modern micro-frontends, high-throughput backend APIs, and distributed event-driven design built for peak performance.</p>
+              <div class="card-action-wrap">
+                <a href="contact.html" class="btn-read-more">Read More</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="service-card-ref">
+            <div class="service-card-thumb">
+              <img 
+                src="assets/service-engineer-window.webp" 
+                alt="Autonomous Cloud Infrastructure &amp; FinOps" 
+                width="800" 
+                height="454" 
+                loading="lazy"
+              >
+            </div>
+            <div class="service-card-content">
+              <h3>Autonomous Cloud &amp; FinOps</h3>
+              <p>Dynamic compute auto-scaling, multi-region Kubernetes federation, and real-time cloud waste reclamation.</p>
+              <div class="card-action-wrap">
+                <a href="contact.html" class="btn-read-more">Read More</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="service-card-ref">
+            <div class="service-card-thumb">
+              <img 
+                src="assets/service-engineers-collaborating.webp" 
+                alt="Team Engineering Strategy &amp; Collaborative Transformation" 
+                width="800" 
+                height="447" 
+                loading="lazy"
+              >
+            </div>
+            <div class="service-card-content">
+              <h3>Collaborative Transformation</h3>
+              <p>Pair-programming modernization, DORA velocity acceleration, and embedding automated GitOps pipelines in your teams.</p>
+              <div class="card-action-wrap">
+                <a href="contact.html" class="btn-read-more">Read More</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Practice 1: Multi-Region Kubernetes & FinOps -->
+    <section class="section" style="border-top:1px solid var(--border-subtle);">
+      <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+        <div>
+          <div class="badge" style="margin-bottom:1rem;">Practice 01 &bull; Cloud Infrastructure</div>
+          <h2 style="font-size:2.25rem;margin-bottom:1.25rem;">Multi-Region Kubernetes &amp; FinOps Mesh</h2>
+          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;">
+            We engineer high-availability multi-region Kubernetes clusters with active-active traffic failover. By leveraging Cilium eBPF, we eliminate sidecar proxy memory overhead while enforcing transparent mTLS encryption across all clouds.
+          </p>
+          <ul class="feature-list" style="margin-bottom:2rem;display:flex;flex-direction:column;gap:0.75rem;">
+            <li style="display:flex;align-items:center;gap:0.6rem;color:var(--text-primary);font-size:0.95rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--brand-cyan)"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Multi-Cluster Federation:</strong> Automated GKE, EKS &amp; Azure AKS failover mesh.
+            </li>
+            <li style="display:flex;align-items:center;gap:0.6rem;color:var(--text-primary);font-size:0.95rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--brand-cyan)"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>eBPF Wire-Speed Observability:</strong> Real-time kernel packet tracing with Hubble.
+            </li>
+            <li style="display:flex;align-items:center;gap:0.6rem;color:var(--text-primary);font-size:0.95rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--brand-cyan)"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Automated FinOps Circuit Breakers:</strong> Spot node rightsizing and cost drift alerts.
+            </li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary">Request Cloud Architecture Review</a>
+            <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Multi-Region Kubernetes &amp; FinOps Mesh Walkthrough" style="margin-top:0;">
+              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Watch 2-Min Architecture Overview
+            </button>
+          </div>
+        </div>
+        <div style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border-medium);box-shadow:var(--shadow-lg);">
+          <img src="assets/real-datacenter.webp" alt="Stackly Datacenter Server Racks" width="800" height="500" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Practice 2: Agentic AI & Cognitive Systems -->
+    <section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border-subtle);">
+      <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+        <div style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border-medium);box-shadow:var(--shadow-lg);">
+          <img src="assets/real-ai-lab.webp" alt="Stackly AI Neural Network &amp; Lab Infrastructure" width="800" height="500" loading="lazy">
+        </div>
+        <div>
+          <div class="badge badge-cyan" style="margin-bottom:1rem;">Practice 02 &bull; Cognitive AI</div>
+          <h2 style="font-size:2.25rem;margin-bottom:1.25rem;">Agentic AI &amp; Private LLM Serving</h2>
+          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;">
+            Stackly builds deterministic agentic systems using LangGraph, Model Context Protocol (MCP), and locally quantized DeepSeek-R1 / vLLM clusters. Your intellectual property and data remain strictly isolated inside your own VPC.
+          </p>
+          <ul class="feature-list" style="margin-bottom:2rem;display:flex;flex-direction:column;gap:0.75rem;">
+            <li style="display:flex;align-items:center;gap:0.6rem;color:var(--text-primary);font-size:0.95rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--brand-emerald)"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Zero-Egress Private Inference:</strong> PagedAttention vLLM nodes hosted on private H100s.
+            </li>
+            <li style="display:flex;align-items:center;gap:0.6rem;color:var(--text-primary);font-size:0.95rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--brand-emerald)"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Verifiable Agentic Guardrails:</strong> Self-healing tool calling with cyclic state machines.
+            </li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-cyan">Schedule AI Blueprint Session</a>
+            <button type="button" class="btn-video-highlight open-video-modal-btn" data-video-title="Agentic AI &amp; Private LLM Serving Demo" style="margin-top:0;">
+              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Watch 2-Min Architecture Overview
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Practice 3: GitOps & DevSecOps -->
+    <section class="section" style="border-top:1px solid var(--border-subtle);">
+      <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+        <div>
+          <div class="badge badge-emerald" style="margin-bottom:1rem;">Practice 03 &bull; Continuous Delivery</div>
+          <h2 style="font-size:2.25rem;margin-bottom:1.25rem;">Declarative GitOps &amp; Ephemeral Platforms</h2>
+          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;">
+            We eradicate environment drift. Every infrastructure change is version-controlled via OpenTofu and ArgoCD, triggering automatic preview staging and automated Prometheus-verified canary releases.
+          </p>
+          <ul class="feature-list" style="margin-bottom:2rem;display:flex;flex-direction:column;gap:0.75rem;">
+            <li style="display:flex;align-items:center;gap:0.6rem;color:var(--text-primary);font-size:0.95rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--brand-indigo-light)"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Sub-3 Minute Automated Deploys:</strong> Zero-downtime rollback with Argo Rollouts.
+            </li>
+            <li style="display:flex;align-items:center;gap:0.6rem;color:var(--text-primary);font-size:0.95rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--brand-indigo-light)"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Hermetic CI/CD Pipelines:</strong> Signed container images via Sigstore &amp; Cosign.
+            </li>
+          </ul>
+          <a href="tech-stack.html" class="btn btn-secondary">Inspect GitOps Tooling &rarr;</a>
+        </div>
+        <div style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border-medium);box-shadow:var(--shadow-lg);">
+          <img src="assets/real-devops-team.webp" alt="Stackly Engineering Team Collaborating on GitOps" width="800" height="500" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagement Models Comparison Table -->
+    <section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border-subtle);" aria-labelledby="models-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Commercial Framework</div>
+          <h2 id="models-heading">Stackly Engagement &amp; Partnership Models</h2>
+          <p>Transparent structures designed for high-velocity enterprise execution.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:2rem;">
+          <div class="card-glass" style="padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div class="badge" style="margin-bottom:1rem;">Targeted Audit</div>
+              <h3 style="font-size:1.5rem;margin-bottom:0.75rem;">Architecture Sprint</h3>
+              <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1.5rem;">
+                2-week deep technical analysis of existing distributed systems, bottlenecks, security postures, and cloud cost leakage.
+              </p>
+              <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--text-primary);margin-bottom:1.5rem;">
+                2 Weeks <span style="font-size:0.9rem;color:var(--text-muted);font-weight:400;">/ Fixed Scope</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-outline btn-block">Request Sprint Scope</a>
+          </div>
+
+          <div class="card-glass" style="padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;border-color:var(--brand-indigo);box-shadow:var(--shadow-lg),var(--shadow-glow);">
+            <div>
+              <div class="badge badge-cyan" style="margin-bottom:1rem;">Flagship Program</div>
+              <h3 style="font-size:1.5rem;margin-bottom:0.75rem;">Full Transformation</h3>
+              <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1.5rem;">
+                End-to-end multi-region migration, agentic AI integration, GitOps platform implementation, and complete production cutover.
+              </p>
+              <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--brand-cyan);margin-bottom:1.5rem;">
+                12&ndash;16 Wks <span style="font-size:0.9rem;color:var(--text-muted);font-weight:400;">/ Turnkey SLA</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-block">Initiate Transformation</a>
+          </div>
+
+          <div class="card-glass" style="padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div class="badge badge-emerald" style="margin-bottom:1rem;">Executive Advisory</div>
+              <h3 style="font-size:1.5rem;margin-bottom:0.75rem;">Fellow Advisory Retainer</h3>
+              <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:1.5rem;">
+                Dedicated access to a Stackly Principal Fellow Architect for ongoing design review, incident escalation, and board-level strategy.
+              </p>
+              <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--brand-emerald);margin-bottom:1.5rem;">
+                Ongoing <span style="font-size:0.9rem;color:var(--text-muted);font-weight:400;">/ Guaranteed SLA</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-outline btn-block">Consult a Fellow</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Video Walkthrough Modal (Plays assets/demo-video.mp4) -->
+  <div id="video-walkthrough-modal" class="video-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="video-title">
+    <div class="video-modal-content">
+      <div class="video-modal-header">
+        <h3 id="video-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:var(--brand-cyan);">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          Stackly Architecture Walkthrough &amp; Practice Demo
+        </h3>
+        <button type="button" class="btn-close-video" aria-label="Close video player">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="video-modal-body">
+        <video id="walkthrough-video-player" controls preload="none">
+          <source src="assets/demo-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+            <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" loading="lazy">
+          </a>
+          <p>Architecting the resilient, autonomous enterprise stack.</p>
+          <div class="social-links" aria-label="Social Channels">
+            <a href="404.html" class="social-icon-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="X Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tech-stack.html">Tech Stack</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Advisory RFP</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Global Hubs</h4>
+          <ul>
+            <li><a href="contact.html">San Francisco &bull; Core</a></li>
+            <li><a href="contact.html">New York &bull; Financial Core</a></li>
+            <li><a href="contact.html">London &bull; EMEA Hub</a></li>
+            <li><a href="contact.html">Singapore &bull; APAC Base</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stackly Journal</h4>
+          <p>Receive quarterly peer-reviewed engineering papers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed', 'Added to Stackly Journal.', 'success');">
+            <input type="email" placeholder="cto@firm.com" required>
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Systems, LLC. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="404.html">Security Disclosures</a>
+          <a href="404.html">Master Services Agreement</a>
+          <a href="404.html">SOC2 Type II Report</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

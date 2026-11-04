@@ -1,0 +1,35 @@
+{
+  "name": "stackly-transformation-calculator",
+  "version": "1.0.0",
+  "description": "Transformation ROI & Velocity Calculator React Component for Stackly Systems",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test src/lib/calculateROI.test.ts",
+    "test:vitest": "vitest run"
+  },
+  "keywords": [
+    "devops",
+    "roi-calculator",
+    "finops",
+    "dora-metrics",
+    "react",
+    "tailwindcss",
+    "kubernetes",
+    "gitops"
+  ],
+  "author": "Stackly Systems, LLC",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.5"
+  }
+}
+

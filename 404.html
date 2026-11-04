@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP 404: Route Not Found | Stackly Systems</title>
+  <meta name="description" content="Stackly enterprise diagnostic error handler: Route Not Found in distributed service mesh.">
+  <meta name="theme-color" content="#070a13">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="error-page-wrapper">
+    <div style="margin-bottom:1.75rem; text-align:center;">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home" style="display:inline-flex; align-items:center; text-decoration:none;">
+        <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" fetchpriority="high">
+      </a>
+    </div>
+    <div class="terminal-card" role="region" aria-label="Terminal Error Diagnostics">
+      <div class="terminal-header">
+        <div class="terminal-dots" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="terminal-title">stackly-edge-gateway &bull; envoy/1.31.0 &bull; diagnostics.log</div>
+      </div>
+
+      <div class="terminal-body">
+        <div class="http-code">404</div>
+        <div class="error-status">
+          <strong>ERROR_CODE:</strong> ROUTE_NOT_FOUND_IN_SERVICE_MESH
+        </div>
+
+        <div class="terminal-log">
+          <p><span class="dim">[00:00:01.042]</span> <span class="highlight">INFO:</span> Ingress request received at edge cluster: <span class="dim">pod/stackly-ingress-edge-f88a9c</span></p>
+          <p><span class="dim">[00:00:01.048]</span> <span class="highlight">DEBUG:</span> Querying distributed service discovery mesh...</p>
+          <p><span class="dim">[00:00:01.064]</span> <span class="danger">FATAL:</span> Target endpoint is decoupled from reality or social media redirect is operating as specified in architectural constraints.</p>
+          <p><span class="dim">[00:00:01.072]</span> <span class="highlight">DIAGNOSTIC:</span> The resource you requested has either undergone an irreversible microservices refactor, been purged by our FinOps optimizer, or you followed a social link into our zero-trust honeypot.</p>
+        </div>
+
+        <div class="terminal-actions">
+          <a href="index.html" class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            Return to Enterprise Core (Homepage)
+          </a>
+
+          <a href="login.html" class="btn btn-secondary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" y1="12" x2="3" y2="12"></line>
+            </svg>
+            Client Portal Login
+          </a>
+        </div>
+
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+          <span class="dim" style="font-size:0.8rem;">Tracing Honeytoken Origin: social_channels_v2</span>
+          <div style="display:flex;gap:0.75rem;" aria-label="Monitored Channels">
+            <a href="404.html" aria-label="LinkedIn honeypot" style="color:var(--text-muted);display:flex;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="404.html" aria-label="X Twitter honeypot" style="color:var(--text-muted);display:flex;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+            </a>
+            <a href="404.html" aria-label="GitHub honeypot" style="color:var(--text-muted);display:flex;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="404.html" aria-label="YouTube honeypot" style="color:var(--text-muted);display:flex;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

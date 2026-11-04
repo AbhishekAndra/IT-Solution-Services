@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Onboarding &amp; Registration | Stackly Enterprise Systems</title>
+  <meta name="description" content="Provision your enterprise client tenant and connect your engineering leadership to Stackly advisory telemetry.">
+  <meta name="theme-color" content="#070a13">
+
+  <link rel="preload" href="assets/auth-showcase.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="auth-page-wrapper">
+    <!-- Left Showcase Panel -->
+    <aside class="auth-showcase-panel" aria-label="Enterprise Authentication Showcase">
+      <div class="auth-brand">
+        <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+          <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" fetchpriority="high">
+        </a>
+      </div>
+
+      <div class="auth-showcase-visual">
+        <div class="showcase-img-frame">
+          <img 
+            src="assets/auth-showcase.webp" 
+            alt="Stackly Enterprise Zero Trust Security &amp; Telemetry Architecture" 
+            width="680" 
+            height="860" 
+            fetchpriority="high"
+          >
+        </div>
+      </div>
+
+      <!-- Verified Enterprise Testimonial Carousel -->
+      <div class="testimonial-box" role="region" aria-label="Client Testimonial">
+        <blockquote class="testimonial-quote">
+          &ldquo;Stackly deployed an agentic diagnosis engine across our 18 healthcare centers in 90 days. Their architectural rigor and compliance documentation are gold-standard.&rdquo;
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-thumb">
+            <img 
+              src="assets/real-avatar-sophia.webp" 
+              alt="Dr. Sophia Chen, Chief Data & AI Officer" 
+              width="240" 
+              height="240" 
+              loading="lazy"
+            >
+          </div>
+          <div class="author-meta">
+            <div class="name">Dr. Sophia Chen</div>
+            <div class="role">Chief Data &amp; AI Officer &bull; BioHealth Global</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Onboarding Panel -->
+    <main class="auth-form-panel">
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <div class="badge badge-emerald" style="margin-bottom:0.75rem;">
+            <span class="pulse-dot"></span>
+            Tenant Provisioning &bull; Instant SLA
+          </div>
+          <h2>Enterprise Registration</h2>
+          <p>
+            Connect your engineering organization to NexusPoint advisory. Already registered? 
+            <a href="login.html">Sign in here</a>.
+          </p>
+        </div>
+
+        <!-- SSO Options -->
+        <div class="sso-buttons-group">
+          <a href="404.html" class="btn-sso" aria-label="Register with Google Workspace SSO">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+            </svg>
+            Google SSO
+          </a>
+
+          <a href="404.html" class="btn-sso" aria-label="Register with GitHub Enterprise">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub Enterprise
+          </a>
+        </div>
+
+        <div class="auth-separator">
+          <span>Or Provision with Corporate Email</span>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="client-signup-form" novalidate>
+          <div class="form-group">
+            <label for="signup-name">Full Legal Name *</label>
+            <div class="input-wrapper">
+              <input 
+                type="text" 
+                id="signup-name" 
+                name="name" 
+                placeholder="Dr. Sophia Chen" 
+                required
+                autocomplete="name"
+              >
+            </div>
+            <span class="field-error-msg">Please enter your legal name</span>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-email">Corporate Work Email (No public domains) *</label>
+            <div class="input-wrapper">
+              <input 
+                type="email" 
+                id="signup-email" 
+                name="email" 
+                placeholder="s.chen@neurodrive-edge.com" 
+                required
+                autocomplete="email"
+              >
+              <span class="field-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+            </div>
+            <span class="field-error-msg">Corporate domain required (@company.com)</span>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-role">Leadership Role *</label>
+            <div class="input-wrapper">
+              <select id="signup-role" name="role" required>
+                <option value="" disabled selected>Select Your Position</option>
+                <option value="Chief Technology Officer (CTO)">Chief Technology Officer (CTO)</option>
+                <option value="VP of Platform Engineering">VP of Platform Engineering</option>
+                <option value="Principal Solutions Architect">Principal Solutions Architect</option>
+                <option value="Chief Information Security Officer (CISO)">Chief Information Security Officer (CISO)</option>
+                <option value="Director of AI / Data Platforms">Director of AI / Data Platforms</option>
+                <option value="Technical Product Owner">Technical Product Owner</option>
+              </select>
+            </div>
+            <span class="field-error-msg">Please select an engineering role</span>
+          </div>
+
+          <!-- Password with Interactive Strength Meter -->
+          <div class="form-group">
+            <label for="signup-password">Secure Tenant Password *</label>
+            <div class="input-wrapper">
+              <input 
+                type="password" 
+                id="signup-password" 
+                name="password" 
+                placeholder="Min 8 chars with mixed entropy" 
+                required
+                autocomplete="new-password"
+              >
+              <button type="button" id="toggle-signup-pass" class="toggle-password-btn" aria-label="Show password">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+            <span class="field-error-msg">Password must be at least 8 characters</span>
+
+            <!-- Strength Meter Visual Indicator -->
+            <div class="password-meter-wrap" aria-live="polite">
+              <div class="meter-bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+              <div class="meter-label">
+                <span>Entropy Score</span>
+                <span id="meter-status-text">Awaiting input</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms Checkbox & Modal Trigger -->
+          <div class="form-group">
+            <label class="checkbox-label" style="align-items:flex-start;">
+              <input type="checkbox" id="signup-terms" required style="margin-top:0.25rem;">
+              <span>
+                I accept the 
+                <a href="#" class="open-terms-trigger" style="color:var(--brand-indigo-light);text-decoration:underline;">
+                  Master Services Agreement (MSA) &amp; Confidentiality Protocol
+                </a>
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:0.5rem;">
+            Provision Tenant &amp; Enter Portal
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+
+        <div style="margin-top:2.5rem;text-align:center;font-size:0.8rem;color:var(--text-muted);">
+          Protected by Enterprise Zero-Trust Workload Attestation &bull; 
+          <a href="index.html" style="color:var(--text-secondary);text-decoration:underline;">Return to Homepage</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       Accessible Terms of Service Modal with Focus Trap
+       ======================================================================== -->
+  <div id="terms-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-title">Master Services Agreement &amp; Security Protocol</h3>
+        <button type="button" class="btn-close-modal close-terms-btn" aria-label="Close Terms of Service Modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <h4>1. Confidentiality &amp; Mutual Non-Disclosure</h4>
+        <p>
+          All architecture artifacts, source repository links, cloud cost telemetry, and performance benchmarks shared via the Stackly Client Portal are protected by strict bilateral non-disclosure provisions. Stackly employees hold active security clearances and adhere to SOC2 Type II and FedRAMP operational safeguards.
+        </p>
+
+        <h4>2. Client Tenant Isolation</h4>
+        <p>
+          Client telemetry workspaces are cryptographically partitioned using individual customer-managed encryption keys (CMEK). No cross-tenant data aggregation or unauthorized model fine-tuning is permitted on client codebases or operational telemetry.
+        </p>
+
+        <h4>3. SLA &amp; Support Response Windows</h4>
+        <p>
+          Tier-1 Enterprise Engagements include guaranteed 15-minute response times for critical (P1) incident consultations and dedicated access to an assigned Principal Solutions Architect.
+        </p>
+
+        <h4>4. Intellectual Property &amp; Deliverables</h4>
+        <p>
+          Upon signature and deliverable sign-off in the authenticated portal, all custom Terraform modules, Helm charts, CI/CD runbooks, and architecture specification blueprints transfer exclusively to the client enterprise.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary close-terms-btn">Review Later</button>
+        <button type="button" id="accept-terms-btn" class="btn btn-primary">Acknowledge &amp; Accept MSA</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
+

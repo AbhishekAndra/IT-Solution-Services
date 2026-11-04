@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal Login | Stackly Enterprise Systems</title>
+  <meta name="description" content="Secure authenticated portal for Stackly consulting clients, infrastructure telemetry, and architectural deliverables.">
+  <meta name="theme-color" content="#070a13">
+
+  <link rel="preload" href="assets/auth-showcase.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="auth-page-wrapper">
+    <!-- Left Showcase Panel -->
+    <aside class="auth-showcase-panel" aria-label="Enterprise Authentication Showcase">
+      <div class="auth-brand">
+        <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+          <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" fetchpriority="high">
+        </a>
+      </div>
+
+      <div class="auth-showcase-visual">
+        <div class="showcase-img-frame">
+          <img 
+            src="assets/auth-showcase.webp" 
+            alt="Stackly Enterprise Zero Trust Security &amp; Telemetry Architecture" 
+            width="680" 
+            height="860" 
+            fetchpriority="high"
+          >
+        </div>
+      </div>
+
+      <!-- Verified Enterprise Testimonial Carousel -->
+      <div class="testimonial-box" role="region" aria-label="Client Testimonial">
+        <blockquote class="testimonial-quote">
+          &ldquo;Stackly re-architected our transaction settlement pipeline across 3 cloud regions. Our P99 latency dropped from 140ms to 8ms with zero downtime during cutover.&rdquo;
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-thumb">
+            <img 
+              src="assets/real-avatar-elena.webp" 
+              alt="Elena Vance, CTO at Apex Financial Technologies" 
+              width="240" 
+              height="240" 
+              loading="lazy"
+            >
+          </div>
+          <div class="author-meta">
+            <div class="name">Elena Vance</div>
+            <div class="role">Chief Technology Officer &bull; Apex Financial</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Authentication Panel -->
+    <main class="auth-form-panel">
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <div class="badge badge-cyan" style="margin-bottom:0.75rem;">
+            <span class="pulse-dot"></span>
+            Zero-Trust Enclave &bull; FIPS 140-3
+          </div>
+          <h2>Client Portal Login</h2>
+          <p>
+            Access your engagement telemetry and architectural artifacts. New enterprise client? 
+            <a href="signup.html">Request Tenant Access</a>.
+          </p>
+        </div>
+
+        <!-- Enterprise SSO Providers -->
+        <div class="sso-buttons-group">
+          <a href="404.html" class="btn-sso" aria-label="Authenticate with Google Workspace SSO">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+            </svg>
+            Google SSO
+          </a>
+
+          <a href="404.html" class="btn-sso" aria-label="Authenticate with Okta SAML 2.0">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+            Okta / SAML
+          </a>
+        </div>
+
+        <div class="auth-separator">
+          <span>Or with Corporate Credentials</span>
+        </div>
+
+        <!-- Login Form -->
+        <form id="client-login-form" novalidate>
+          <div class="form-group">
+            <label for="login-email">Corporate Work Email</label>
+            <div class="input-wrapper">
+              <input 
+                type="email" 
+                id="login-email" 
+                name="email" 
+                placeholder="name@enterprise.com" 
+                value="marcus.brody@biohealth.corp"
+                required
+                autocomplete="email"
+              >
+              <span class="field-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+            </div>
+            <span class="field-error-msg">Valid corporate email address required</span>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <div class="input-wrapper">
+              <input 
+                type="password" 
+                id="login-password" 
+                name="password" 
+                placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" 
+                value="SecretPass2026!"
+                required
+                autocomplete="current-password"
+              >
+              <button type="button" id="toggle-login-pass" class="toggle-password-btn" aria-label="Show password">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+            <span class="field-error-msg">Password must be at least 6 characters</span>
+          </div>
+
+          <div class="form-options-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember-me" checked>
+              <span>Keep session active</span>
+            </label>
+            <a href="404.html" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-login-submit" id="login-submit-btn">
+            <span>Log In to Portal</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+
+        <div style="margin-top:2.5rem;text-align:center;font-size:0.8rem;color:var(--text-muted);">
+          Protected by Enterprise Zero-Trust Workload Attestation &bull; 
+          <a href="index.html" style="color:var(--text-secondary);text-decoration:underline;">Return to Homepage</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latest Tools &amp; Architecture Matrix | Stackly Systems</title>
+  <meta name="description" content="Explore Stackly's 2026 enterprise technology stack: Kubernetes 1.32, Cilium eBPF, LangGraph, vLLM, DeepSeek-R1, and OpenTofu.">
+  <meta name="theme-color" content="#070a13">
+
+  <link rel="preload" href="assets/real-ai-lab.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" fetchpriority="high">
+      </a>
+
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Solutions <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="tech-stack.html" class="nav-link active">Tech Stack <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="case-studies.html" class="nav-link">Case Studies <span style="font-size:0.65rem;opacity:0.6;margin-left:0.2rem;">&#9662;</span></a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="contact.html" class="btn-consultation">Work With Us</a>
+        <button class="theme-toggle-btn" aria-label="Toggle visual theme mode" type="button">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm" style="border-radius:var(--radius-full);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;margin-right:0.25rem;">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          Log In
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Interactive Matrix Network Canvas Hero (Unique to Tech Stack Page) -->
+    <section class="tech-canvas-hero" aria-label="Interactive Architecture Matrix">
+      <!-- Animated Canvas Background -->
+      <canvas id="tech-matrix-canvas" class="tech-matrix-canvas" aria-hidden="true"></canvas>
+      <div class="tech-canvas-overlay" aria-hidden="true"></div>
+
+      <div class="container tech-canvas-content">
+        <div class="matrix-hud-pill">
+          <span class="matrix-radar-ping"></span>
+          Live Core Topologies &bull; 2026 Architectural Matrix
+        </div>
+        <h1>Battle-Tested <span class="text-gradient">Technology Matrix</span></h1>
+        <p style="color:var(--text-secondary); font-size:1.15rem; line-height:1.6; max-width:720px; margin-inline:auto;">
+          Every framework, container runtime, and vector pipeline integrated by Stackly has undergone strict fuzzing, kernel latency profiling, and SOC2 attestation.
+        </p>
+
+        <!-- Live Telemetry HUD Bar -->
+        <div class="tech-telemetry-hud-bar" role="region" aria-label="Real-Time Network Telemetry">
+          <div class="hud-telemetry-cell">
+            <div class="cell-val">128 <span>Nodes</span></div>
+            <div class="cell-lbl">Cluster Federation</div>
+          </div>
+          <div class="hud-telemetry-cell">
+            <div class="cell-val">&lt; 1.2 <span>ms</span></div>
+            <div class="cell-lbl">eBPF Packet Latency</div>
+          </div>
+          <div class="hud-telemetry-cell">
+            <div class="cell-val">&lt; 15 <span>Min</span></div>
+            <div class="cell-lbl">DORA MTTR Average</div>
+          </div>
+          <div class="hud-telemetry-cell">
+            <div class="cell-val">99.999<span>%</span></div>
+            <div class="cell-lbl">Ingress High-Avail</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted Enterprise Partners Marquee Strip (Reference Layout 2) -->
+    <section class="partner-logo-strip" aria-label="Trusted Enterprise Partners">
+      <div class="container">
+        <div class="partner-strip-title">Trusted by Modern CTOs &amp; Engineering Teams Worldwide</div>
+        <div class="partner-logos-wrap">
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            GlobexBank
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            CloudWatch
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            Epicurove
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            BioSynthesis
+          </div>
+          <div class="partner-brand-name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Interlock Global
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Tools & Matrix Section -->
+    <section class="section" style="border-top:1px solid var(--border-subtle);padding-top:3rem;">
+      <div class="container">
+        <!-- Filter Controls -->
+        <div class="filter-controls" style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem;margin-bottom:3rem;" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Stack Foundations</button>
+          <button class="filter-btn" data-filter="cloud" role="tab" aria-selected="false">Cloud &amp; Kubernetes</button>
+          <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">Agentic AI &amp; LLMs</button>
+          <button class="filter-btn" data-filter="security" role="tab" aria-selected="false">Zero-Trust &amp; Security</button>
+          <button class="filter-btn" data-filter="devops" role="tab" aria-selected="false">GitOps Platforms</button>
+        </div>
+
+        <div class="latest-tools-grid" role="region" aria-live="polite">
+          <!-- Populated by main.js -->
+        </div>
+
+        <!-- 4-Metric Stats Ribbon Bar (Reference Image 3) -->
+        <div class="stats-ribbon-bar">
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">440<span>+</span></div>
+            <div class="ribbon-stat-label">Satisfied Enterprise Clients</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">62<span>+</span></div>
+            <div class="ribbon-stat-label">Cloud Modernizations Completed</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">44<span>+</span></div>
+            <div class="ribbon-stat-label">Security &amp; ISO Accreditations</div>
+          </div>
+          <div class="ribbon-stat-item">
+            <div class="ribbon-stat-num">53<span>+</span></div>
+            <div class="ribbon-stat-label">Principal &amp; Staff Engineers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Benchmark Telemetry Table -->
+    <section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border-subtle);" aria-labelledby="bench-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-emerald">Verified Telemetry</div>
+          <h2 id="bench-heading">System Performance &amp; Scalability Benchmarks</h2>
+          <p>Real laboratory benchmarks captured on 3-cloud region reference topologies.</p>
+        </div>
+
+        <div class="table-panel" style="box-shadow:var(--shadow-lg);">
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Tool / Subsystem</th>
+                  <th scope="col">Domain</th>
+                  <th scope="col">Standard SLA</th>
+                  <th scope="col">P99 Latency</th>
+                  <th scope="col">Throughput Peak</th>
+                  <th scope="col">Memory Overhead</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-weight:700;color:var(--text-primary)">Cilium eBPF Service Mesh</div>
+                    <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--brand-cyan)">Kernel BPF v1.16</div>
+                  </td>
+                  <td>Cloud Fabric</td>
+                  <td><span class="badge badge-emerald" style="padding:0.2rem 0.5rem;font-size:0.7rem;">99.999%</span></td>
+                  <td style="font-family:var(--font-mono);">&lt; 0.85 ms</td>
+                  <td style="font-family:var(--font-mono);color:var(--brand-cyan)">40 Gbps / Node</td>
+                  <td style="font-family:var(--font-mono);">-68% vs Envoy Sidecars</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:700;color:var(--text-primary)">vLLM &amp; DeepSeek-R1 (FP8)</div>
+                    <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--brand-cyan)">PagedAttention Mesh</div>
+                  </td>
+                  <td>Agentic AI</td>
+                  <td><span class="badge badge-emerald" style="padding:0.2rem 0.5rem;font-size:0.7rem;">99.95%</span></td>
+                  <td style="font-family:var(--font-mono);">&lt; 85 ms TTFT</td>
+                  <td style="font-family:var(--font-mono);color:var(--brand-cyan)">480 tokens/sec</td>
+                  <td style="font-family:var(--font-mono);">8x H100 SXM5 Enclave</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:700;color:var(--text-primary)">ArgoCD Declarative Rollouts</div>
+                    <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--brand-cyan)">Canary Controller</div>
+                  </td>
+                  <td>Continuous Delivery</td>
+                  <td><span class="badge badge-emerald" style="padding:0.2rem 0.5rem;font-size:0.7rem;">100% Rollback</span></td>
+                  <td style="font-family:var(--font-mono);">&lt; 3.2 mins deploy</td>
+                  <td style="font-family:var(--font-mono);color:var(--brand-cyan)">60+ deploys/day</td>
+                  <td style="font-family:var(--font-mono);">Zero staging drift</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:700;color:var(--text-primary)">Falco eBPF Kernel Threat Guard</div>
+                    <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--brand-cyan)">Syscall Attestation</div>
+                  </td>
+                  <td>Security Enclave</td>
+                  <td><span class="badge badge-emerald" style="padding:0.2rem 0.5rem;font-size:0.7rem;">Real-time</span></td>
+                  <td style="font-family:var(--font-mono);">&lt; 1.8 ms alert</td>
+                  <td style="font-family:var(--font-mono);color:var(--brand-cyan)">1.4M syscalls/sec</td>
+                  <td style="font-family:var(--font-mono);">&lt; 2% CPU overhead</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:3.5rem;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Request Custom Architecture Evaluation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+            <img src="assets/stackly-logo.webp" alt="Stackly" class="brand-logo-img" width="141" height="38" loading="lazy">
+          </a>
+          <p>Architecting the resilient, autonomous enterprise stack.</p>
+          <div class="social-links" aria-label="Social Channels">
+            <a href="404.html" class="social-icon-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="X Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a href="404.html" class="social-icon-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tech-stack.html">Tech Stack</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Advisory RFP</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Global Hubs</h4>
+          <ul>
+            <li><a href="contact.html">San Francisco &bull; Core</a></li>
+            <li><a href="contact.html">New York &bull; Financial Core</a></li>
+            <li><a href="contact.html">London &bull; EMEA Hub</a></li>
+            <li><a href="contact.html">Singapore &bull; APAC Base</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stackly Journal</h4>
+          <p>Receive quarterly peer-reviewed engineering papers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed', 'Added to Stackly Journal.', 'success');">
+            <input type="email" placeholder="cto@firm.com" required>
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Stackly Systems, LLC. All rights reserved.</div>
+        <div class="footer-legal-links">
+          <a href="404.html">Security Disclosures</a>
+          <a href="404.html">Master Services Agreement</a>
+          <a href="404.html">SOC2 Type II Report</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
