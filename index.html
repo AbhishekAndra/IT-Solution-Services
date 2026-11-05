@@ -145,63 +145,112 @@
       </div>
 
       <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content">
+        <div class="hero-full-content">
+          <!-- Top Telemetry & Status Badges -->
+          <div class="hero-badges-row">
             <div class="badge badge-cyan">
               <span class="pulse-dot"></span>
               Stackly Systems Advisory &bull; 2026 Enterprise Architecture
             </div>
-            <h1 id="hero-heading">
-              Architecting the <span class="text-gradient">Modern Enterprise Stack</span> with Cloud &amp; Agentic AI
-            </h1>
-            <p class="hero-lead">
-              Stackly partners with CTOs and VP Engineers to modernize distributed infrastructure, engineer private agentic AI pipelines with DeepSeek-R1 &amp; LangGraph, and deploy zero-trust Kubernetes topologies.
-            </p>
-            <div class="hero-ctas">
-              <a href="contact.html" class="btn btn-primary btn-lg">
-                Get a Consultation
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <!-- Video Modal Trigger -->
-              <button type="button" class="btn btn-secondary btn-lg open-video-modal-btn" data-video-title="Stackly 2-Min Architecture Overview">
-                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" style="width:18px;height:18px;color:var(--brand-cyan)">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-                Watch 2-Min Architecture Overview
-              </button>
+            <div class="hero-live-status-pill">
+              <span class="status-indicator"></span>
+              <span class="status-text">Production Mesh: <strong>99.999% SLA</strong> &bull; Active-Active Multi-Cloud</span>
             </div>
           </div>
 
-          <!-- Hero Graphic with Real Datacenter Image & Video Play Trigger -->
-          <div class="hero-visual">
-            <div class="graphic-frame">
-              <img 
-                src="assets/real-datacenter.webp" 
-                alt="Stackly Enterprise Datacenter Infrastructure &amp; Cloud Network" 
-                width="800" 
-                height="500" 
-                fetchpriority="high"
-              >
-              <!-- Video Play Overlay Button -->
-              <button type="button" class="video-play-overlay-btn open-video-modal-btn" aria-label="Play video walkthrough">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-              </button>
+          <!-- Main Impact Heading -->
+          <h1 id="hero-heading">
+            Architecting the <span class="text-gradient">Modern Enterprise Stack</span> with Multi-Cloud &amp; Agentic AI
+          </h1>
 
-              <div class="floating-status-badge">
-                <div class="badge-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                  </svg>
-                </div>
-                <div class="badge-text">
-                  <span class="label">Stackly Production Mesh</span>
-                  <span class="val">99.999% SLA &bull; Active-Active Multi-Cloud</span>
-                </div>
+          <!-- Lead Narrative -->
+          <p class="hero-lead">
+            Stackly partners with CTOs and VP Engineers to modernize distributed infrastructure, engineer private agentic AI pipelines with DeepSeek-R1 &amp; LangGraph, and deploy zero-trust Kubernetes topologies with guaranteed 99.999% uptime and verified 38% FinOps run-rate reduction.
+          </p>
+
+          <!-- Action CTAs -->
+          <div class="hero-ctas">
+            <a href="contact.html" class="btn btn-primary btn-lg">
+              Get a Consultation
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="#roi-calculator-section" class="btn btn-secondary btn-lg" style="border-radius:12px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--brand-cyan);">
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <line x1="8" y1="6" x2="16" y2="6"></line>
+                <line x1="16" y1="14" x2="16" y2="14.01"></line>
+                <line x1="12" y1="14" x2="12" y2="14.01"></line>
+                <line x1="8" y1="14" x2="8" y2="14.01"></line>
+                <line x1="16" y1="18" x2="16" y2="18.01"></line>
+                <line x1="12" y1="18" x2="12" y2="18.01"></line>
+                <line x1="8" y1="18" x2="8" y2="18.01"></line>
+              </svg>
+              Calculate Transformation ROI
+            </a>
+
+            <!-- Video Modal Trigger -->
+            <button type="button" class="btn btn-outline btn-lg open-video-modal-btn" data-video-title="Stackly 2-Min Architecture Overview">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" style="width:18px;height:18px;color:var(--brand-cyan)">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              Watch 2-Min Architecture Overview
+            </button>
+          </div>
+
+          <!-- 4 Core Enterprise Pillars Grid (Filling the content area across the hero) -->
+          <div class="hero-pillars-grid">
+            <div class="hero-pillar-card">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h4>Multi-Region Kubernetes</h4>
+                <p>Karpenter autoscaling, Cilium eBPF mesh, and multi-cloud cross-zone resilience.</p>
+              </div>
+            </div>
+
+            <div class="hero-pillar-card">
+              <div class="pillar-icon" style="color:var(--brand-cyan); background:rgba(6, 182, 212, 0.14);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                  <circle cx="12" cy="12" r="6"></circle>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h4>Agentic AI Pipelines</h4>
+                <p>Private sovereign DeepSeek-R1 &amp; LangGraph multi-agent orchestration enclaves.</p>
+              </div>
+            </div>
+
+            <div class="hero-pillar-card">
+              <div class="pillar-icon" style="color:var(--brand-emerald); background:rgba(16, 185, 129, 0.14);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h4>Zero-Trust Security</h4>
+                <p>SPIFFE/SPIRE workload attestation, ephemeral mTLS, and FIPS 140-3 enclaves.</p>
+              </div>
+            </div>
+
+            <div class="hero-pillar-card">
+              <div class="pillar-icon" style="color:var(--brand-amber); background:rgba(245, 158, 11, 0.14);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h4>FinOps Optimization</h4>
+                <p>38% verified cloud run-rate reduction with continuous automated cluster rightsizing.</p>
               </div>
             </div>
           </div>

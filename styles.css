@@ -684,16 +684,16 @@ code, kbd, samp, pre {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    opacity: 0.38;
-    filter: saturate(1.8) hue-rotate(220deg) contrast(1.15);
+    opacity: 0.62;
+    filter: saturate(1.25) contrast(1.15);
   }
 
   .hero-video-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(13, 11, 33, 0.75);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: radial-gradient(circle at 50% 25%, rgba(7, 10, 19, 0.45) 0%, rgba(11, 15, 29, 0.75) 60%, rgba(7, 10, 19, 0.94) 100%);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
     z-index: 1;
   }
 
@@ -712,6 +712,161 @@ code, kbd, samp, pre {
     background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(6, 182, 212, 0.08) 50%, transparent 70%);
     pointer-events: none;
     z-index: 1;
+  }
+
+  /* Full-width content container spanning the entire hero */
+  .hero-full-content {
+    max-width: 1180px;
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .hero-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-live-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(13, 18, 35, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: var(--radius-full);
+      padding: 0.4rem 1.1rem;
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.15);
+
+      .status-indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--brand-emerald);
+        box-shadow: 0 0 10px var(--brand-emerald);
+        animation: pulse 2s infinite;
+      }
+
+      strong {
+        color: var(--brand-cyan);
+        font-weight: 700;
+      }
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 4.8vw, 4.25rem);
+      font-weight: 800;
+      line-height: 1.14;
+      margin-block: 0.5rem 1.5rem;
+      letter-spacing: -0.025em;
+      max-width: 1040px;
+
+      .text-gradient {
+        background: linear-gradient(135deg, #ffffff 15%, var(--brand-indigo-light) 65%, var(--brand-cyan) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .hero-lead {
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+      max-width: 880px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    /* 4-Column Feature Pillars Grid covering the lower hero space */
+    .hero-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+      margin-bottom: 3rem;
+      text-align: left;
+
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-pillar-card {
+        background: rgba(13, 18, 33, 0.7);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(139, 92, 246, 0.22);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem 1.25rem;
+        transition: all var(--transition-fast);
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+
+        &:hover {
+          border-color: rgba(6, 182, 212, 0.55);
+          transform: translateY(-4px);
+          box-shadow: 0 12px 28px -5px rgba(6, 182, 212, 0.25);
+          background: rgba(18, 25, 48, 0.88);
+        }
+
+        .pillar-icon {
+          width: 44px;
+          height: 44px;
+          border-radius: var(--radius-md);
+          background: rgba(99, 102, 241, 0.16);
+          color: var(--brand-indigo-light);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+
+          svg {
+            width: 22px;
+            height: 22px;
+          }
+        }
+
+        .pillar-content {
+          h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.01em;
+          }
+
+          p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+          }
+        }
+      }
+    }
   }
 
   .hero-grid {
